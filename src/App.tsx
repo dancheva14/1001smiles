@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Contacts from "./components/Contacts";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -22,6 +23,8 @@ function App() {
       <Navbar />
       <main className="main-content">
         {(currentHash === "" || currentHash === "#begginning") && <Home />}
+        {currentHash === "#events" && <Home />}
+        {currentHash === "#gallery" && <Gallery />}
         {currentHash === "#about-us" && <AboutUs />}
         {currentHash === "#contacts" && <Contacts />}
       </main>
