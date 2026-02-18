@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 
+const PRICES_DROPDOWN_ITEMS = [
+  { label: "Рожден ден/имен ден", href: "#prices-birthday" },
+  { label: "Погача", href: "#prices-pogacha" },
+  { label: "Парти за разкриване на пола", href: "#prices-gender-reveal" },
+  { label: "Кръщене", href: "#prices-christening" },
+  { label: "Меню възрастни", href: "#prices-adults" },
+  { label: "Допълнителни услуги", href: "#prices-extras" },
+];
+
 function Navbar() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const [pricesDropdownOpen, setPricesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -47,6 +57,41 @@ function Navbar() {
           >
             Мероприятия
           </a>
+        </li>
+        <li
+          className="nav-item nav-item-dropdown"
+          onMouseEnter={() => setPricesDropdownOpen(true)}
+          onMouseLeave={() => setPricesDropdownOpen(false)}
+        >
+          <span
+            className={`nav-link nav-link-dropdown ${currentHash?.startsWith("#prices") ? "active" : ""}`}
+            onClick={() => setPricesDropdownOpen((prev) => !prev)}
+            onKeyDown={(e) =>
+              e.key === "Enter" && setPricesDropdownOpen((prev) => !prev)
+            }
+            role="button"
+            tabIndex={0}
+          >
+            Цени и пакети
+          </span>
+          {pricesDropdownOpen && (
+            <ul className="dropdown-menu">
+              {PRICES_DROPDOWN_ITEMS.map((item) => (
+                <li key={item.href} className="dropdown-item">
+                  <a
+                    href={item.href}
+                    className="dropdown-link"
+                    onClick={() => {
+                      setCurrentHash(item.href);
+                      setPricesDropdownOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
         <li className="nav-item">
           <a

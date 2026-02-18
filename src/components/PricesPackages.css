@@ -1,0 +1,226 @@
+.prices-packages-section {
+  padding: 3rem 2rem 4rem;
+  min-height: 60vh;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.prices-packages-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.packages-section-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.packages-section-header:first-child {
+  margin-top: 0;
+}
+
+.packages-section-header-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffb3b3 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.packages-section-header-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffb3b3 0%, #764ba2 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.packages-section-header-toggle:first-of-type {
+  margin-top: 0;
+}
+
+.packages-section-header-toggle--centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.packages-section-header-toggle--centered .header-toggle-icon {
+  margin-left: 1rem;
+}
+
+.packages-section-header-toggle:hover {
+  background-color: rgba(118, 75, 162, 0.1);
+}
+
+.header-toggle-icon {
+  flex-shrink: 0;
+  color: #764ba2;
+  margin-left: 1rem;
+}
+
+.header-toggle-icon-minus {
+  transform: rotate(90deg);
+}
+
+.packages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.packages-grid.collapsed {
+  display: none;
+}
+
+.package-card {
+  background: linear-gradient(135deg, #fde4e4 0%, #e4cffa 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.package-card-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.75rem 0;
+}
+
+.package-card-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.price-eur,
+.price-bgn {
+  background: black;
+  -webkit-background-clip: text;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.price-sep {
+  font-weight: 500;
+  margin: 0 0.35rem;
+  color: #764ba2;
+}
+
+.package-card-divider {
+  height: 3px;
+  background: linear-gradient(90deg, #ffb3b3 0%, #764ba2 100%);
+  margin: 1rem 0;
+  border-radius: 1px;
+}
+
+.package-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.package-feature {
+  margin-bottom: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.package-feature::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #dcb8ff;
+  font-weight: 700;
+}
+
+.feature-title {
+  display: block;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.feature-subdetail {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  margin-left: 0;
+}
+
+.package-disclaimer {
+  background: rgba(255, 179, 179, 0.2);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #333;
+  border-left: 3px solid #d7afff;
+}
+
+@media (max-width: 768px) {
+  .prices-packages-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .packages-section-header,
+  .packages-section-header-toggle {
+    font-size: 1.6rem;
+  }
+
+  .package-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
