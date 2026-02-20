@@ -9,6 +9,7 @@ import PricesPackages from "./components/PricesPackages";
 import PogachaPage from "./components/PogachaPage";
 import AdultsMenuPage from "./components/AdultsMenuPage";
 import GenderRevealPartyPage from "./components/GenderRevealPartyPage";
+import ChristeningPage from "./components/ChristeningPage";
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -33,12 +34,14 @@ function App() {
         {currentHash === "#prices-pogacha" && <PogachaPage />}
         {currentHash === "#prices-adults" && <AdultsMenuPage />}
         {currentHash === "#prices-gender-reveal" && <GenderRevealPartyPage />}
+        {currentHash === "#prices-christening" && <ChristeningPage />}
         {currentHash.startsWith("#prices-") &&
           currentHash !== "#prices-birthday" &&
           currentHash !== "#prices-nameday" &&
           currentHash !== "#prices-pogacha" &&
           currentHash !== "#prices-adults" &&
-          currentHash !== "#prices-gender-reveal" && <Home />}
+          currentHash !== "#prices-gender-reveal" &&
+          currentHash !== "#prices-christening" && <Home />}
         {currentHash === "#gallery" && <Gallery />}
         {currentHash === "#about-us" && <AboutUs />}
         {currentHash === "#contacts" && <Contacts />}
