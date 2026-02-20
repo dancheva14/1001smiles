@@ -1,0 +1,287 @@
+.gender-reveal-page-section {
+  padding: 3rem 2rem 4rem;
+  min-height: 60vh;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.gender-reveal-page-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.gender-reveal-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gender-reveal-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.gender-reveal-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gender-reveal-paragraph {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  color: #5e463e;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.gender-reveal-text-image-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gender-reveal-paragraph-inline {
+  margin: 0;
+  color: #764ba2;
+  font-weight: 600;
+}
+
+.gender-reveal-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.gender-reveal-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gender-reveal-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gender-reveal-consultation-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffb3b3 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+.gender-reveal-consultation-btn:hover {
+  background: linear-gradient(135deg, #ffb3b3 0%, #764ba2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(118, 75, 162, 0.3);
+}
+
+.gender-reveal-btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.gender-reveal-consultation-btn:hover .gender-reveal-btn-icon {
+  transform: translateY(2px);
+}
+
+.gender-reveal-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gender-reveal-pricing-card {
+  background: white !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gender-reveal-pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gender-reveal-pricing-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #5e463e;
+  margin: 0;
+}
+
+.gender-reveal-pricing-card-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #fef9e7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.gender-reveal-pricing-card-toggle:hover {
+  background: #f9e79f;
+}
+
+.gender-reveal-toggle-icon {
+  color: #5e463e;
+}
+
+.gender-reveal-toggle-icon-minus {
+  transform: rotate(90deg);
+}
+
+.gender-reveal-pricing-card-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #5e463e;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.gender-reveal-price-eur {
+  color: #5e463e;
+}
+
+.gender-reveal-price-bgn {
+  color: #5e463e;
+}
+
+.gender-reveal-pricing-card-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #5e463e 0%, rgba(94, 70, 62, 0.3) 100%);
+  margin: 1rem 0;
+  border-radius: 1px;
+}
+
+.gender-reveal-pricing-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gender-reveal-pricing-feature {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.gender-reveal-pricing-feature:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gender-reveal-pricing-feature::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #5e463e;
+  font-weight: 700;
+}
+
+.gender-reveal-feature-title {
+  display: block;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.gender-reveal-feature-subdetail {
+  display: block;
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-left: 0;
+}
+
+@media (max-width: 1024px) {
+  .gender-reveal-page-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .gender-reveal-content-right {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .gender-reveal-page-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .gender-reveal-heading {
+    font-size: 1.8rem;
+  }
+
+  .gender-reveal-paragraph {
+    font-size: 1rem;
+  }
+
+  .gender-reveal-page-container {
+    gap: 2rem;
+  }
+
+  .gender-reveal-text-image-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .gender-reveal-image-container {
+    width: 100%;
+    justify-content: center;
+  }
+}

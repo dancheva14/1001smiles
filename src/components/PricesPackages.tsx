@@ -152,7 +152,7 @@ function PricesPackages() {
       <div className="prices-packages-container">
         <button
           type="button"
-          className="packages-section-header packages-section-header-toggle packages-section-header-toggle--centered"
+          className="packages-section-header-toggle packages-section-header-toggle--centered"
           onClick={() => setExpanded10(!expanded10)}
           aria-expanded={expanded10}
         >
@@ -185,7 +185,7 @@ function PricesPackages() {
 
         <button
           type="button"
-          className="packages-section-header packages-section-header-toggle"
+          className="packages-section-header-toggle packages-section-header-toggle--centered"
           onClick={() => setExpanded15(!expanded15)}
           aria-expanded={expanded15}
         >
