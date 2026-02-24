@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
+import {
+  Sparkles,
+  Home,
+  PartyPopper,
+  Gift,
+  Camera,
+  Heart,
+  MessageCircle,
+} from "lucide-react";
 
 const PRICES_DROPDOWN_ITEMS = [
   { label: "Рожден ден/имен ден", href: "#prices-birthday" },
@@ -35,18 +44,31 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <h1>1001 усмивки</h1>
+        <a
+          href="#"
+          className="navbar-brand-link"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.hash = "";
+            setCurrentHash("");
+          }}
+        >
+          <Sparkles className="navbar-brand-icon" size={28} />
+          <h1>1001 усмивки</h1>
+        </a>
       </div>
       <ul className="navbar-nav">
         <li className="nav-item">
           <a
             href="#begginning"
             className={`nav-link ${isActive("") || isActive("#begginning") ? "active" : ""}`}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               window.location.hash = "";
               setCurrentHash("");
             }}
           >
+            <Home className="nav-link-icon" size={18} />
             Начало
           </a>
         </li>
@@ -55,6 +77,7 @@ function Navbar() {
             href="#events"
             className={`nav-link ${isActive("#events") ? "active" : ""}`}
           >
+            <PartyPopper className="nav-link-icon" size={18} />
             Мероприятия
           </a>
         </li>
@@ -72,6 +95,7 @@ function Navbar() {
             role="button"
             tabIndex={0}
           >
+            <Gift className="nav-link-icon" size={18} />
             Цени и пакети
           </span>
           {pricesDropdownOpen && (
@@ -98,6 +122,7 @@ function Navbar() {
             href="#gallery"
             className={`nav-link ${isActive("#gallery") ? "active" : ""}`}
           >
+            <Camera className="nav-link-icon" size={18} />
             Галерия
           </a>
         </li>
@@ -106,14 +131,16 @@ function Navbar() {
             href="#about-us"
             className={`nav-link ${isActive("#about-us") ? "active" : ""}`}
           >
+            <Heart className="nav-link-icon" size={18} />
             За нас
           </a>
         </li>
-        <li className="nav-item">
+        <li className="nav-item nav-item-cta">
           <a
             href="#contacts"
-            className={`nav-link ${isActive("#contacts") ? "active" : ""}`}
+            className={`nav-link nav-cta-btn ${isActive("#contacts") ? "active" : ""}`}
           >
+            <MessageCircle className="nav-cta-icon" size={15} />
             Свържете се с нас
           </a>
         </li>

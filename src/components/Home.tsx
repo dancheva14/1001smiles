@@ -1,20 +1,4 @@
 import "./Home.css";
-import { useSpring, animated, useTrail, config } from "@react-spring/web";
-import { useInView } from "@react-spring/web";
-import {
-  Sparkles,
-  Heart,
-  Users,
-  Gift,
-  Cake,
-  Baby,
-  Balloon,
-  PartyPopper,
-  Bird,
-  Phone,
-  MapPin,
-  Mail,
-} from "lucide-react";
 
 function Home() {
   const scrollToEvents = () => {
@@ -25,265 +9,208 @@ function Home() {
     window.location.hash = "#contacts";
   };
 
-  // Hero анимации
-  const heroSpring = useSpring({
-    from: { opacity: 0, transform: "translateY(50px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
-    config: config.gentle,
-  });
-
-  const brandSpring = useSpring({
-    from: { opacity: 0, transform: "scale(0.8)" },
-    to: { opacity: 1, transform: "scale(1)" },
-    delay: 200,
-    config: { ...config.wobbly, duration: 1000 },
-  });
-
-  const buttonsSpring = useSpring({
-    from: { opacity: 0, transform: "translateY(30px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
-    delay: 600,
-    config: config.gentle,
-  });
-
-  // Features секция с InView
-  const [featuresRef, featuresInView] = useInView({
-    once: true,
-    rootMargin: "-100px 0px",
-  });
-
-  const featureCards = [
+  const services = [
     {
-      icon: Sparkles,
-      title: "Магическа атмосфера",
+      icon: "🎂",
+      title: "Рождени дни",
       description:
-        "Създаваме приказна среда с красива украса и внимание към детайла",
-      color: "#ffb6c1",
-      sparkles: true,
+        "Незабравими партита с теми, анимации и чудесна атмосфера за вашето дете",
     },
     {
-      icon: Heart,
-      title: "С любов и грижа",
+      icon: "🍼",
+      title: "Бебешки партита",
       description:
-        "Всяко събитие организираме с любов и отношение към всеки детайл",
-      color: "#90ee90",
-      sparkles: true,
+        "Нежни и красиви тематични партита за новото бебе в семейството",
     },
     {
-      icon: Users,
-      title: "Опитен екип",
-      description: "Професионалисти с многогодишен опит в детски празници",
-      color: "#9370db",
-      sparkles: false,
+      icon: "🌸",
+      title: "Именни дни",
+      description:
+        "Отпразнувайте важния ден с близките си в топла и весела среда",
     },
     {
-      icon: Gift,
-      title: "Пълен пакет услуги",
-      description: "От украса до кетъринг - грижим се за всичко",
-      color: "#ffd700",
-      sparkles: false,
+      icon: "🥐",
+      title: "Погачи",
+      description: "Традиционни и модерни погачи, организирани с вкус и стил",
     },
   ];
 
-  const featureTrail = useTrail(featureCards.length, {
-    opacity: featuresInView ? 1 : 0,
-    transform: featuresInView ? "translateY(0px)" : "translateY(50px)",
-    config: config.gentle,
-  });
-
-  // Events секция с InView
-  const [eventsRef, eventsInView] = useInView({
-    once: true,
-    rootMargin: "-100px 0px",
-  });
-
-  const eventCards = [
+  const whyItems = [
     {
-      icon: Cake,
-      title: "Рожден Ден",
+      icon: "🎨",
+      title: "Уникален дизайн",
       description:
-        "Направете рождения ден на вашето дете незабравим! Предлагаме пълна организация с украса, аниматори, торта и забавления.",
-      color: "#ffb6c1",
+        "Всяко събитие се украсява индивидуално според желанията на детето",
     },
     {
-      icon: Baby,
-      title: "Погача",
-      description:
-        "Празнувайте първия рожден ден на вашето бебе с традиционна погача в приятна и уютна атмосфера.",
-      color: "#ffd700",
+      icon: "👨‍👩‍👧‍👦",
+      title: "Семеен подход",
+      description: "Третираме всяко семейство с топлина и персонално внимание",
     },
     {
-      icon: Balloon,
-      title: "Разкриване на Пола",
-      description:
-        "Споделете вълнуващата новина с близки и приятели! Организираме незабравимо парти за разкриване на пола.",
-      color: "#ff69b4",
-    },
-    {
-      icon: PartyPopper,
-      title: "Имен Ден",
-      description:
-        "Честито име! Организирайте специално парти за имения ден на вашето дете с приятели и забавления.",
-      color: "#9370db",
-    },
-    {
-      icon: Bird,
-      title: "Кръщене",
-      description:
-        "Празнувайте важния духовен момент в живота на вашето дете с елегантна украса и изискана организация.",
-      color: "#87ceeb",
-    },
-    {
-      icon: Gift,
-      title: "Специални Събития",
-      description:
-        "Организираме всякакви специални моменти и празници по ваше желание и нужди.",
-      color: "#98d8c8",
+      icon: "🎈",
+      title: "Безупречна организация",
+      description: "Грижим се за всеки детайл, за да се насладите на момента",
     },
   ];
 
-  const eventTrail = useTrail(eventCards.length, {
-    opacity: eventsInView ? 1 : 0,
-    transform: eventsInView ? "translateY(0px) scale(1)" : "translateY(50px) scale(0.9)",
-    config: config.gentle,
-  });
+  const galleryItems = [
+    { emoji: "🎂", label: "Рожден ден – Мия, 5г." },
+    { emoji: "🌸", label: "Именен ден – Стефани" },
+    { emoji: "🍼", label: "Baby shower" },
+    { emoji: "🥐", label: "Погача – Семейство Петрови" },
+    { emoji: "🎈", label: "Рожден ден – Иван, 3г." },
+    { emoji: "✨", label: "Тематично парти" },
+    { emoji: "🎉", label: "Рожден ден – Лея, 7г." },
+    { emoji: "💛", label: "Именен ден – Виктор" },
+  ];
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-section">
+      {/* Hero */}
+      <section className="hero" id="hero">
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="confetti" />
+        <div className="star">⭐</div>
+        <div className="star">🌟</div>
+        <div className="star">✨</div>
+
         <div className="hero-content">
-          <animated.div style={heroSpring}>
-            <h1 className="hero-welcome">Детски парти център</h1>
-          </animated.div>
-          <animated.h1 style={brandSpring} className="hero-brand">
-            1001smiles
-            <span className="brand-highlight"></span>
-          </animated.h1>
-          <animated.p style={heroSpring} className="hero-subtitle">
-            Създаваме незабравими моменти и хиляди усмивки за вашите деца
-          </animated.p>
-          <animated.div style={buttonsSpring} className="hero-buttons">
-            <button className="btn-primary" onClick={scrollToEvents}>
-              Разгледай мероприятия
-            </button>
-            <button className="btn-secondary" onClick={scrollToContacts}>
-              Свържи се с нас
-            </button>
-          </animated.div>
-          <div className="scroll-indicator"></div>
-        </div>
-
-        {/* Floating декорации */}
-        <div className="floating-decorations">
-          <div className="floating-heart floating-1">❤️</div>
-          <div className="floating-star floating-2">⭐</div>
-          <div className="floating-balloon floating-3">🎈</div>
-          <div className="floating-gift floating-4">🎁</div>
-          <div className="floating-cake floating-5">🎂</div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="features-section" ref={featuresRef}>
-        <div className="features-content">
-          <h2 className="features-title">Защо да изберете нас?</h2>
-          <p className="features-subtitle">
-            Ние правим всяко събитие специално и незабравимо
-          </p>
-          <div className="features-grid">
-            {featureTrail.map((style, index) => {
-              const feature = featureCards[index];
-              const IconComponent = feature.icon;
-              return (
-                <animated.div key={index} style={style} className="feature-card">
-                  <div
-                    className="feature-icon"
-                    style={{ backgroundColor: feature.color }}
-                  >
-                    <IconComponent className="icon-main" />
-                    {feature.sparkles && (
-                      <>
-                        <Sparkles className="icon-sparkle icon-sparkle-1" />
-                        <Sparkles className="icon-sparkle icon-sparkle-2" />
-                      </>
-                    )}
-                  </div>
-                  <h3 className="feature-title">{feature.title}</h3>
-                  <p className="feature-description">{feature.description}</p>
-                </animated.div>
-              );
-            })}
+          <div className="hero-tag">✨ Детски парти център</div>
+          <h1>1001smiles</h1>
+          <h2>
+            Тук детските очи блестят, смехът звучи най-искрено,
+            <br /> а всеки празник се превръща в красив спомен.
+          </h2>
+          <div className="hero-buttons">
+            <a
+              href="#events"
+              className="btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToEvents();
+              }}
+            >
+              🎉 Разгледай мероприятия
+            </a>
+            <a
+              href="#contacts"
+              className="btn-secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToContacts();
+              }}
+            >
+              📞 Свържи се с нас
+            </a>
           </div>
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="events-section" ref={eventsRef}>
-        <div className="events-content">
-          <h2 className="events-title">Нашите мероприятия</h2>
-          <p className="events-subtitle">
-            Организираме всякакви детски празници и специални моменти
-          </p>
-          <div className="events-grid">
-            {eventTrail.map((style, index) => {
-              const event = eventCards[index];
-              const IconComponent = event.icon;
-              return (
-                <animated.div key={index} style={style} className="event-card">
-                  <div
-                    className="event-icon"
-                    style={{ backgroundColor: event.color }}
-                  >
-                    <IconComponent className="icon" />
-                  </div>
-                  <h3 className="event-title">{event.title}</h3>
-                  <p className="event-description">{event.description}</p>
-                  <a href="#contacts" className="event-link">
-                    Виж пакети →
-                  </a>
-                </animated.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <div className="cta-content">
-            <h2 className="cta-title">Готови да създадем незабравими спомени?</h2>
-            <p className="cta-subtitle">
-              Свържете се с нас и нека заедно организираме перфектното събитие за вашето дете
-            </p>
-            <div className="cta-buttons">
-              <a href="tel:0893535084" className="cta-button cta-button-phone">
-                <Phone className="cta-phone-icon" />
-                <span>0893 53 50 84</span>
-              </a>
-              <a href="#contacts" className="cta-button cta-button-inquiry">
-                Изпрати запитване
-              </a>
+          <div className="hero-stats">
+            <div className="stat">
+              <div className="stat-num">500+</div>
+              <div className="stat-label">щастливи семейства</div>
+            </div>
+            <div className="stat">
+              <div className="stat-num">⭐ 5.0</div>
+              <div className="stat-label">средна оценка</div>
+            </div>
+            <div className="stat">
+              <div className="stat-num">8г.</div>
+              <div className="stat-label">опит и любов</div>
             </div>
           </div>
-          <div className="cta-contact-info">
-            <div className="cta-contact-item">
-              <MapPin className="cta-contact-icon" />
-              <div className="cta-contact-details">
-                <h3 className="cta-contact-label">Адрес</h3>
-                <p className="cta-contact-text">гр. Перник, ул. Волга 28</p>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="section">
+        <h2 className="section-title">
+          Какво <span>предлагаме</span>?
+        </h2>
+        <p className="section-sub">
+          Всяко събитие е уникално – организираме го с любов и внимание към
+          детайла
+        </p>
+        <div className="services-grid">
+          {services.map((s, i) => (
+            <div key={i} className="service-card">
+              <span className="service-icon">{s.icon}</span>
+              <h3>{s.title}</h3>
+              <p>{s.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why us */}
+      <section className="why-section">
+        <h2 className="section-title">
+          Защо да изберете <span>нас?</span>
+        </h2>
+        <p className="section-sub">
+          Вярваме, че всяко дете заслужава магически спомени
+        </p>
+        <div className="why-grid">
+          {whyItems.map((w, i) => (
+            <div key={i} className="why-item">
+              <div className="why-icon">{w.icon}</div>
+              <h4>{w.title}</h4>
+              <p>{w.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery preview */}
+      <section className="gallery-section">
+        <h2 className="section-title">
+          От нашата <span>галерия</span>
+        </h2>
+        <p className="section-sub">Моменти, заснети с любов</p>
+        <div className="gallery-masonry">
+          {galleryItems.map((g, i) => (
+            <a
+              key={i}
+              href="#gallery"
+              className="gallery-card"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = "#gallery";
+              }}
+            >
+              <div className={`gallery-placeholder gp-${(i % 8) + 1}`}>
+                {g.emoji}
               </div>
-            </div>
-            <div className="cta-contact-item">
-              <Mail className="cta-contact-icon" />
-              <div className="cta-contact-details">
-                <h3 className="cta-contact-label">E-mail</h3>
-                <p className="cta-contact-text">1001smiles@gmail.com</p>
+              <div className="gallery-label">
+                {g.emoji} {g.label}
               </div>
-            </div>
-          </div>
+            </a>
+          ))}
         </div>
+      </section>
+
+      {/* CTA banner */}
+      <section className="cta-banner">
+        <div className="cta-emojis">🎉🎂🎈🌟✨</div>
+        <h2>Нека направим рождения ден незабравим!</h2>
+        <p>
+          Свържете се с нас и ще организираме вашето специално събитие с любов
+        </p>
+        <a
+          href="#contacts"
+          className="btn-white"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToContacts();
+          }}
+        >
+          📞 Резервирайте сега
+        </a>
       </section>
     </>
   );
