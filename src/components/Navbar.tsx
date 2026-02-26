@@ -6,6 +6,7 @@ import {
   PartyPopper,
   Gift,
   Camera,
+  Layout,
   Heart,
   MessageCircle,
 } from "lucide-react";
@@ -72,13 +73,22 @@ function Navbar() {
             Начало
           </a>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a
             href="#events"
             className={`nav-link ${isActive("#events") ? "active" : ""}`}
           >
             <PartyPopper className="nav-link-icon" size={18} />
             Мероприятия
+          </a>
+        </li> */}
+        <li className="nav-item">
+          <a
+            href="#zala"
+            className={`nav-link ${isActive("#zala") ? "active" : ""}`}
+          >
+            <PartyPopper className="nav-link-icon" size={18} />
+            Залата
           </a>
         </li>
         <li

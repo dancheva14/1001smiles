@@ -1,222 +1,333 @@
 import { useState } from "react";
 import "./PricesPackages.css";
-import { Minus, Plus } from "lucide-react";
 
 interface PackageFeature {
   title: string;
   subDetail?: string;
+  bold?: boolean;
 }
 
 interface PackageCardProps {
-  title: string;
-  priceEur: string;
+  name: string;
   priceBgn: string;
+  priceEur: string;
   features: PackageFeature[];
   disclaimer: string;
+  featured?: boolean;
 }
 
 function PackageCard({
-  title,
-  priceEur,
+  name,
   priceBgn,
+  priceEur,
   features,
   disclaimer,
+  featured = false,
 }: PackageCardProps) {
   return (
-    <div className="package-card">
-      <h3 className="package-card-title">{title}</h3>
-      <div className="package-card-price">
-        <span className="price-eur">{priceEur} €</span>
-        <span className="price-sep">или</span>
-        <span className="price-bgn">{priceBgn} лв.</span>
+    <div className={`pkg-card ${featured ? "featured" : ""}`}>
+      <div className="pkg-card-top-bar" />
+      {featured && <div className="featured-badge">⭐ Препоръчан</div>}
+      <div className="pkg-card-body">
+        <div className="pkg-name">{name}</div>
+        <div className="pkg-price">
+          {priceBgn} лв. <span className="eur">/ {priceEur} €</span>
+        </div>
+        <hr className="pkg-divider" />
+        <ul className="pkg-features">
+          {features.map((feature, index) => (
+            <li key={index} className={feature.bold ? "bold-item" : ""}>
+              <span className="check">{feature.bold ? "✦" : "●"}</span>
+              <div>
+                {feature.title}
+                {feature.subDetail && (
+                  <span className="feat-detail">{feature.subDetail}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="note-box">{disclaimer}</div>
       </div>
-      <div className="package-card-divider" />
-      <ul className="package-features">
-        {features.map((feature, index) => (
-          <li key={index} className="package-feature">
-            <span className="feature-title">{feature.title}</span>
-            {feature.subDetail && (
-              <span className="feature-subdetail">{feature.subDetail}</span>
-            )}
-          </li>
-        ))}
-      </ul>
-      <div className="package-disclaimer">{disclaimer}</div>
     </div>
   );
 }
 
 const STANDARD_PACKAGE_10_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала - 2 часа",
+    title: "Наем зала – 2 часа",
     subDetail: "не се допускат външни лица",
   },
   {
-    title: "Детско меню - 10 бр.",
+    title: "Детско меню – 10 бр.",
     subDetail:
       "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
   },
   {
-    title: "Напитки - 10 бр.",
+    title: "Напитки – 10 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите - 100 бр. ханки",
+    title: "Кетъринг меню за родителите – 100 бр. ханки",
     subDetail:
       "две плата със мини сандвичи и две плата със пилешки хапки, моцарелки и сиренца",
   },
-  { title: "Включени разядки/гризинки за децата" },
+  { title: "Включени разядки/гризинки за децата", bold: true },
 ];
 
 const LUX_PACKAGE_10_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала - 2 часа",
+    title: "Наем зала – 2 часа",
     subDetail: "не се допускат външни лица",
   },
   {
-    title: "Детско меню - 10 бр.",
+    title: "Детско меню – 10 бр.",
     subDetail:
       "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
   },
   {
-    title: "Напитки - 10 бр.",
+    title: "Напитки – 10 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите - 100 бр. ханки",
+    title: "Кетъринг меню за родителите – 100 бр. ханки",
     subDetail:
       "две плата със мини сандвичи и две плата със пилешки хапки, моцарелки и сиренца",
   },
-  { title: "Включени разядки/гризинки за децата" },
-  { title: "Дигитална покана" },
-  { title: "Аниматор с тематичен костюм" },
+  { title: "Включени разядки/гризинки за децата", bold: true },
+  { title: "Дигитална покана", bold: true },
+  { title: "Аниматор с тематичен костюм", bold: true },
 ];
 
 const STANDARD_PACKAGE_15_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала - 2 часа",
+    title: "Наем зала – 2 часа",
     subDetail: "не се допускат външни лица",
   },
   {
-    title: "Детско меню - 15 бр.",
+    title: "Детско меню – 15 бр.",
     subDetail:
       "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
   },
   {
-    title: "Напитки - 15 бр.",
+    title: "Напитки – 15 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите - 150 бр. ханки",
+    title: "Кетъринг меню за родителите – 150 бр. ханки",
     subDetail:
       "три плата със мини сандвичи и три плата със пилешки хапки, моцарелки и сиренца",
   },
-  { title: "Включени разядки/гризинки за децата" },
+  { title: "Включени разядки/гризинки за децата", bold: true },
 ];
 
 const LUX_PACKAGE_15_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала - 2 часа",
+    title: "Наем зала – 2 часа",
     subDetail: "не се допускат външни лица",
   },
   {
-    title: "Детско меню - 15 бр.",
+    title: "Детско меню – 15 бр.",
     subDetail:
       "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
   },
   {
-    title: "Напитки - 15 бр.",
+    title: "Напитки – 15 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите - 150 бр. ханки",
+    title: "Кетъринг меню за родителите – 150 бр. ханки",
     subDetail:
       "три плата със мини сандвичи и три плата със пилешки хапки, моцарелки и сиренца",
   },
-  { title: "Включени разядки/гризинки за децата" },
-  { title: "Дигитална покана" },
+  { title: "Включени разядки/гризинки за децата", bold: true },
+  { title: "Дигитална покана", bold: true },
   {
     title: "Аниматор с тематичен костюм и един занимател",
+    bold: true,
   },
 ];
 
 const DISCLAIMER =
-  "*за всяко следващо дете се заплаща 12.78 € / 25 лв. на куверт (до 2 деца)";
+  "* за всяко следващо дете се заплаща 12.78 € / 25 лв. на куверт (до 2 деца)";
+
+type PackageSize = "10" | "15";
 
 function PricesPackages() {
-  const [expanded10, setExpanded10] = useState(true);
-  const [expanded15, setExpanded15] = useState(true);
+  const [activeTab, setActiveTab] = useState<PackageSize>("10");
+
+  const scrollToContacts = () => {
+    window.location.hash = "#contacts";
+  };
 
   return (
-    <section className="prices-packages-section">
-      <div className="prices-packages-container">
-        <button
-          type="button"
-          className="packages-section-header-toggle packages-section-header-toggle--centered"
-          onClick={() => setExpanded10(!expanded10)}
-          aria-expanded={expanded10}
-        >
-          <span>Пакети за 10 деца</span>
-          {expanded10 ? (
-            <Minus
-              className="header-toggle-icon header-toggle-icon-minus"
-              size={25}
-            />
-          ) : (
-            <Plus className="header-toggle-icon" size={25} />
-          )}
-        </button>
-        <div className={`packages-grid ${!expanded10 ? "collapsed" : ""}`}>
-          <PackageCard
-            title="Пакет Стандарт"
-            priceEur="270"
-            priceBgn="528"
-            features={STANDARD_PACKAGE_10_FEATURES}
-            disclaimer={DISCLAIMER}
-          />
-          <PackageCard
-            title="Пакет Лукс"
-            priceEur="330"
-            priceBgn="645"
-            features={LUX_PACKAGE_10_FEATURES}
-            disclaimer={DISCLAIMER}
-          />
+    <div className="prices-page-bg">
+      <section className="hero-section">
+        <div className="hero-left">
+          <h1 className="page-title">
+            Защо да ни доверите
+            <br />
+            организацията на рождения
+            <br />
+            ден на вашето дете?
+          </h1>
+          <div className="why-box">
+            <p>
+              Рожденият ден е едно от най-специалните и вълнуващи преживявания в
+              живота на детето. В &quot;Детски център 1001 усмивки&quot;
+              разбираме важността на всеки такъв момент и се грижим за всеки
+              детайл, за да създадем незабравима приказна атмосфера за вашето
+              дете и близки.
+            </p>
+            <p>
+              Ние предлагаме пълна организация на празненството – от тематична
+              украса, кетъринг и аниматор, до музика и фотография. Работим с
+              опитни партньори, за да осигурим неповторимо изживяване.
+            </p>
+            <p>От нас – организацията. От вас – само забавлението!</p>
+          </div>
         </div>
 
-        <button
-          type="button"
-          className="packages-section-header-toggle packages-section-header-toggle--centered"
-          onClick={() => setExpanded15(!expanded15)}
-          aria-expanded={expanded15}
-        >
-          <span>Пакети за 15 деца</span>
-          {expanded15 ? (
-            <Minus
-              className="header-toggle-icon header-toggle-icon-minus"
-              size={25}
-            />
-          ) : (
-            <Plus className="header-toggle-icon" size={25} />
-          )}
-        </button>
-        <div className={`packages-grid ${!expanded15 ? "collapsed" : ""}`}>
-          <PackageCard
-            title="Пакет Стандарт"
-            priceEur="405"
-            priceBgn="792"
-            features={STANDARD_PACKAGE_15_FEATURES}
-            disclaimer={DISCLAIMER}
-          />
-          <PackageCard
-            title="Пакет Лукс"
-            priceEur="495"
-            priceBgn="968"
-            features={LUX_PACKAGE_15_FEATURES}
-            disclaimer={DISCLAIMER}
-          />
+        <div className="hero-right">
+          <div className="pricing-panel">
+            <div className="pricing-panel-header">
+              <div className="pricing-hint">Най-популярен пакет</div>
+              <div className="pricing-panel-title-row">
+                <span className="pricing-panel-title">
+                  Пакет Стандарт – 10 деца
+                </span>
+                <span className="quick-price">
+                  270 € <span>/ 528 лв.</span>
+                </span>
+              </div>
+            </div>
+            <hr className="divider" />
+            <ul className="feature-list">
+              <li>
+                <span className="dot" />
+                <div>
+                  Наем зала – 2 часа
+                  <span className="feat-sub">не се допускат външни лица</span>
+                </div>
+              </li>
+              <li>
+                <span className="dot" />
+                <div>
+                  Детско меню – 10 бр.
+                  <span className="feat-sub">
+                    пица Маргарита, пилешки хапки с картофки или кроасан
+                  </span>
+                </div>
+              </li>
+              <li>
+                <span className="dot" />
+                <div>
+                  Напитки – 10 бр.
+                  <span className="feat-sub">изворна вода или сокче</span>
+                </div>
+              </li>
+              <li>
+                <span className="dot" />
+                <div>
+                  Кетъринг меню за родителите – 100 бр. ханки
+                  <span className="feat-sub">
+                    мини сандвичи, пилешки хапки, моцарелки и сиренца
+                  </span>
+                </div>
+              </li>
+              <li>
+                <span className="dot" />
+                <div>
+                  <strong>Включени разядки/гризинки за децата</strong>
+                </div>
+              </li>
+            </ul>
+            <div className="rental-row">
+              <div className="rental-label">Наем на зала (допълнително)</div>
+              <div className="rental-price">
+                61.36 € / 120 лв.{" "}
+                <span className="rental-price-small">(за 1 час)</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="cta-btn"
+              onClick={scrollToContacts}
+            >
+              ЗАЯВИ КОНСУЛТАЦИЯ ›
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="packages-section">
+        <div className="packages-header">
+          <h2>
+            Изберете вашия <span>пакет</span>
+          </h2>
+          <p>Сравнете нашите пакети и изберете най-подходящия за вашето дете</p>
+        </div>
+
+        <div className="tabs-wrapper">
+          <div className="tabs">
+            <button
+              type="button"
+              className={`tab-btn ${activeTab === "10" ? "active" : ""}`}
+              onClick={() => setActiveTab("10")}
+            >
+              Пакети за 10 деца
+            </button>
+            <button
+              type="button"
+              className={`tab-btn ${activeTab === "15" ? "active" : ""}`}
+              onClick={() => setActiveTab("15")}
+            >
+              Пакети за 15 деца
+            </button>
+          </div>
+        </div>
+
+        {activeTab === "10" && (
+          <div className="pkg-grid">
+            <PackageCard
+              name="Пакет Стандарт"
+              priceBgn="528"
+              priceEur="270"
+              features={STANDARD_PACKAGE_10_FEATURES}
+              disclaimer={DISCLAIMER}
+            />
+            <PackageCard
+              name="Пакет Лукс"
+              priceBgn="645"
+              priceEur="330"
+              features={LUX_PACKAGE_10_FEATURES}
+              disclaimer={DISCLAIMER}
+              featured
+            />
+          </div>
+        )}
+
+        {activeTab === "15" && (
+          <div className="pkg-grid">
+            <PackageCard
+              name="Пакет Стандарт"
+              priceBgn="792"
+              priceEur="405"
+              features={STANDARD_PACKAGE_15_FEATURES}
+              disclaimer={DISCLAIMER}
+            />
+            <PackageCard
+              name="Пакет Лукс"
+              priceBgn="968"
+              priceEur="495"
+              features={LUX_PACKAGE_15_FEATURES}
+              disclaimer={DISCLAIMER}
+              featured
+            />
+          </div>
+        )}
+      </section>
+    </div>
   );
 }
 
