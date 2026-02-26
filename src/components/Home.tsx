@@ -54,15 +54,26 @@ function Home() {
     },
   ];
 
+  const partyImages = [
+    "/images/parties/birthday.jpg",
+    "/images/parties/birthday3.jpg",
+    "/images/parties/babyShower.jpeg",
+    "/images/parties/babyParty.jpg",
+    "/images/parties/birthday2.jpg",
+    "/images/parties/animalsBirthday.jpg",
+    "/images/parties/birthday1.jpg",
+    "/images/parties/birthday4.jpg",
+  ];
+
   const galleryItems = [
-    { emoji: "🎂", label: "Рожден ден – Мия, 5г." },
-    { emoji: "🌸", label: "Именен ден – Стефани" },
-    { emoji: "🍼", label: "Baby shower" },
-    { emoji: "🥐", label: "Погача – Семейство Петрови" },
-    { emoji: "🎈", label: "Рожден ден – Иван, 3г." },
-    { emoji: "✨", label: "Тематично парти" },
-    { emoji: "🎉", label: "Рожден ден – Лея, 7г." },
-    { emoji: "💛", label: "Именен ден – Виктор" },
+    { emoji: "🎂", label: "Рожден ден – Мия, 5г.", src: partyImages[0] },
+    { emoji: "🌸", label: "Именен ден – Стефани", src: partyImages[1] },
+    { emoji: "🍼", label: "Baby shower", src: partyImages[2] },
+    { emoji: "🥐", label: "Погача – Семейство Петрови", src: partyImages[3] },
+    { emoji: "🎈", label: "Рожден ден – Иван, 3г.", src: partyImages[4] },
+    { emoji: "✨", label: "Тематично парти", src: partyImages[5] },
+    { emoji: "🎉", label: "Рожден ден – Лея, 7г.", src: partyImages[6] },
+    { emoji: "💛", label: "Именен ден – Виктор", src: partyImages[7] },
   ];
 
   return (
@@ -184,7 +195,7 @@ function Home() {
               }}
             >
               <div className={`gallery-placeholder gp-${(i % 8) + 1}`}>
-                {g.emoji}
+                <img src={g.src} alt={g.label} className="gallery-card-img" />
               </div>
               <div className="gallery-label">
                 {g.emoji} {g.label}

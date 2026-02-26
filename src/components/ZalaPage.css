@@ -1,20 +1,568 @@
-.zala-page-section {
-  padding: 3rem 2rem 4rem;
-  min-height: 60vh;
+/* Hall page – same design as mockup / PricesPackages */
+.zala-page-bg {
+  --pink: #ff6b9d;
+  --lilac: #c084fc;
+  --peach: #ffb347;
+  --brown: #8b6b52;
+  --text: #4a3728;
+  --muted: #9a8070;
+  --border: rgba(139, 107, 82, 0.13);
+  --shadow: 0 4px 28px rgba(139, 107, 82, 0.1);
+
+  min-height: 100vh;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    linear-gradient(
+      160deg,
+      rgba(255, 248, 240, 0.88) 0%,
+      rgba(255, 240, 252, 0.78) 40%,
+      rgba(248, 240, 255, 0.55) 70%,
+      rgba(255, 248, 240, 0.4) 100%
+    ),
     url("../assets/background.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  padding-bottom: 4rem;
+  font-family: "Nunito", sans-serif;
+  color: var(--text);
 }
 
-.zala-page-text {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #333;
+.zala-breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 92px 24px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.zala-page-bg .zala-breadcrumb a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+.zala-page-bg .zala-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.zala-breadcrumb-current {
+  color: var(--pink);
+  font-weight: 800;
+}
+
+/* Hero */
+.zala-hero-band {
+  position: relative;
+  z-index: 1;
+  padding: 36px 24px 52px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.zala-page-title {
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 55%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zala-page-subtitle {
+  font-size: 1.05rem;
+  color: var(--brown);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.zala-intro-box {
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.zala-intro-box p {
+  font-size: 0.96rem;
+  color: var(--text);
+  line-height: 1.78;
+  margin-bottom: 12px;
+}
+
+.zala-intro-box p:last-child {
+  margin-bottom: 0;
+}
+
+.zala-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.zala-pill {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 7px 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brown);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 10px rgba(139, 107, 82, 0.07);
+  transition: all 0.2s;
+}
+
+.zala-pill:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.zala-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.zala-stat-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.zala-stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.zala-stat-num {
+  font-family: "Baloo 2", cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zala-stat-lbl {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.zala-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.zala-hero-photo {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 56px rgba(139, 107, 82, 0.18);
+  position: relative;
+}
+
+.zala-hero-photo img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.zala-hero-photo-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 10px 18px;
+  font-family: "Baloo 2", cursive;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Gallery */
+.zala-gallery-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.zala-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.zala-section-label h2 {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.zala-section-label h2 span {
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zala-label-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(255, 107, 157, 0.3), transparent);
+}
+
+.zala-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.zala-gal-card {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(139, 107, 82, 0.12);
+  position: relative;
+  cursor: pointer;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.zala-gal-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 16px 52px rgba(192, 132, 252, 0.22);
+}
+
+.zala-gal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zala-gal-tall {
+  grid-row: 1 / 3;
+}
+
+.zala-gal-tall img {
+  height: 576px;
+}
+
+.zala-gal-col img {
+  height: 280px;
+}
+
+.zala-gal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(74, 55, 40, 0.65) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.zala-gal-card:hover .zala-gal-overlay {
+  opacity: 1;
+}
+
+.zala-gal-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.88rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.25s;
+}
+
+.zala-gal-card:hover .zala-gal-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Details */
+.zala-details-section {
+  position: relative;
+  z-index: 1;
+  padding: 20px 24px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.zala-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.zala-detail-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.zala-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(192, 132, 252, 0.18);
+}
+
+.zala-detail-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.zala-detail-card h3 {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px 0;
+}
+
+.zala-detail-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zala-detail-card ul li {
+  font-size: 0.87rem;
+  color: var(--text);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(139, 107, 82, 0.07);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.zala-detail-card ul li:last-child {
+  border-bottom: none;
+}
+
+.zala-detail-card ul li::before {
+  content: "●";
+  color: var(--pink);
+  font-size: 0.5rem;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* CTA strip */
+.zala-cta-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.zala-cta-strip {
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 50%, #ff9f43 100%);
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 12px 52px rgba(255, 107, 157, 0.35);
+}
+
+.zala-cta-strip-left h2 {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.zala-cta-strip-left p {
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.zala-cta-strip-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.zala-btn-white,
+.zala-btn-outline-white {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.zala-btn-white {
+  background: white;
+  color: var(--pink);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.zala-btn-white:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.24);
+}
+
+.zala-btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 11px 28px;
+  font-size: 0.9rem;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.zala-btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .zala-hero-band {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .zala-hero-right {
+    order: -1;
+  }
+
+  .zala-hero-photo img {
+    height: 320px;
+  }
+
+  .zala-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zala-cta-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 28px;
+  }
+
+  .zala-cta-strip-right {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .zala-breadcrumb {
+    padding: 80px 16px 0;
+    font-size: 0.75rem;
+  }
+
+  .zala-hero-band {
+    padding: 24px 16px 36px;
+  }
+
+  .zala-page-title {
+    font-size: 1.75rem;
+  }
+
+  .zala-intro-box {
+    padding: 20px 24px;
+  }
+
+  .zala-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .zala-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zala-gal-tall {
+    grid-row: auto;
+  }
+
+  .zala-gal-tall img {
+    height: 280px;
+  }
+
+  .zala-section-label h2 {
+    font-size: 1.5rem;
+  }
+
+  .zala-cta-strip-left h2 {
+    font-size: 1.4rem;
+  }
+
+  .zala-cta-wrap {
+    padding: 0 16px 48px;
+  }
 }
