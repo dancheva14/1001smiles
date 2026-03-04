@@ -4,12 +4,12 @@ import "./PricesPackages.css";
 interface PackageFeature {
   title: string;
   subDetail?: string;
+  subDetails?: string[];
   bold?: boolean;
 }
 
 interface PackageCardProps {
   name: string;
-  priceBgn: string;
   priceEur: string;
   features: PackageFeature[];
   disclaimer: string;
@@ -18,7 +18,6 @@ interface PackageCardProps {
 
 function PackageCard({
   name,
-  priceBgn,
   priceEur,
   features,
   disclaimer,
@@ -29,23 +28,30 @@ function PackageCard({
       <div className="pkg-card-top-bar" />
       {featured && <div className="featured-badge">⭐ Препоръчан</div>}
       <div className="pkg-card-body">
-        <div className="pkg-name">{name}</div>
-        <div className="pkg-price">
-          {priceBgn} лв. <span className="eur">/ {priceEur} €</span>
+        <div className="pkg-name">
+          {name} - {priceEur} €
         </div>
         <hr className="pkg-divider" />
         <ul className="pkg-features">
-          {features.map((feature, index) => (
-            <li key={index} className={feature.bold ? "bold-item" : ""}>
-              <span className="check">{feature.bold ? "✦" : "●"}</span>
-              <div>
-                {feature.title}
-                {feature.subDetail && (
-                  <span className="feat-detail">{feature.subDetail}</span>
-                )}
-              </div>
-            </li>
-          ))}
+          {features.map((feature, index) => {
+            const details =
+              feature.subDetails ??
+              (feature.subDetail ? [feature.subDetail] : []);
+            return (
+              <li key={index} className={feature.bold ? "bold-item" : ""}>
+                <span className="check">{feature.bold ? "✦" : "●"}</span>
+                <div>
+                  {feature.title}
+                  {details.length > 0 &&
+                    details.map((detail, i) => (
+                      <span key={i} className="feat-detail">
+                        {detail}
+                      </span>
+                    ))}
+                </div>
+              </li>
+            );
+          })}
         </ul>
         <div className="note-box">{disclaimer}</div>
       </div>
@@ -55,103 +61,151 @@ function PackageCard({
 
 const STANDARD_PACKAGE_10_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала – 2 часа",
+    title: "Наем зала – 2 часа и 30 минути",
     subDetail: "не се допускат външни лица",
   },
   {
     title: "Детско меню – 10 бр.",
-    subDetail:
-      "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
+    subDetails: [
+      "Избор между пица или мини сандвичи с пуешко филе и гауда",
+      "Свежи зеленчукови пръчици (морков и краставица)",
+      "Плато със сезонни плодове",
+      "Домашно приготвени сладки (без добавена захар)",
+    ],
   },
   {
     title: "Напитки – 10 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите – 100 бр. ханки",
-    subDetail:
-      "две плата със мини сандвичи и две плата със пилешки хапки, моцарелки и сиренца",
+    title: "Кетъринг меню за родителите",
+    subDetails: [
+      "30 бр. домашни мини кюфтенца",
+      "30 бр. солени мини палачинки с различни вкусове",
+      "1 плато брускети с разнообразни вкусове",
+      "1 плато сладки тарталети",
+    ],
   },
-  { title: "Включени разядки/гризинки за децата", bold: true },
+  {
+    title:
+      "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
+    bold: true,
+  },
+  { title: "Избор на украса от нашите предложения", bold: true },
 ];
 
 const LUX_PACKAGE_10_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала – 2 часа",
+    title: "Наем зала – 2 часа и 30 минути",
     subDetail: "не се допускат външни лица",
   },
   {
     title: "Детско меню – 10 бр.",
-    subDetail:
-      "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
+    subDetails: [
+      "избор между пица или мини сандвичи с пуешко филе и гауда",
+      "Свежи зеленчукови пръчици (морков и краставица)",
+      "Плато със сезонни плодове",
+      "Домашно приготвени сладки (без добавена захар)",
+    ],
   },
   {
     title: "Напитки – 10 бр.",
     subDetail: "изворна вода или сокче",
   },
   {
-    title: "Кетъринг меню за родителите – 100 бр. ханки",
-    subDetail:
-      "две плата със мини сандвичи и две плата със пилешки хапки, моцарелки и сиренца",
-  },
-  { title: "Включени разядки/гризинки за децата", bold: true },
-  { title: "Дигитална покана", bold: true },
-  { title: "Аниматор с тематичен костюм", bold: true },
-];
-
-const STANDARD_PACKAGE_15_FEATURES: PackageFeature[] = [
-  {
-    title: "Наем зала – 2 часа",
-    subDetail: "не се допускат външни лица",
+    title: "Кетъринг меню за родителите",
+    subDetails: [
+      "30 бр. домашни мини кюфтенца",
+      "30 бр. солени мини палачинки с различни вкусове",
+      "1 плато брускети с разнообразни вкусове",
+      "1 плато сладки тарталети",
+    ],
   },
   {
-    title: "Детско меню – 15 бр.",
-    subDetail:
-      "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
-  },
-  {
-    title: "Напитки – 15 бр.",
-    subDetail: "изворна вода или сокче",
-  },
-  {
-    title: "Кетъринг меню за родителите – 150 бр. ханки",
-    subDetail:
-      "три плата със мини сандвичи и три плата със пилешки хапки, моцарелки и сиренца",
-  },
-  { title: "Включени разядки/гризинки за децата", bold: true },
-];
-
-const LUX_PACKAGE_15_FEATURES: PackageFeature[] = [
-  {
-    title: "Наем зала – 2 часа",
-    subDetail: "не се допускат външни лица",
-  },
-  {
-    title: "Детско меню – 15 бр.",
-    subDetail:
-      "избор между пица Маргарита, пилешки хапки с картофки или кроасан",
-  },
-  {
-    title: "Напитки – 15 бр.",
-    subDetail: "изворна вода или сокче",
-  },
-  {
-    title: "Кетъринг меню за родителите – 150 бр. ханки",
-    subDetail:
-      "три плата със мини сандвичи и три плата със пилешки хапки, моцарелки и сиренца",
-  },
-  { title: "Включени разядки/гризинки за децата", bold: true },
-  { title: "Дигитална покана", bold: true },
-  {
-    title: "Аниматор с тематичен костюм и един занимател",
+    title:
+      "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
     bold: true,
   },
+  { title: "Избор на украса от нашите предложения", bold: true },
+  { title: "Дигитална покана", bold: true },
+  { title: "Още нещо трябва да измислим", bold: true },
 ];
 
-const DISCLAIMER =
-  "* за всяко следващо дете се заплаща 12.78 € / 25 лв. на куверт (до 2 деца)";
+const STANDARD_PACKAGE_20_FEATURES: PackageFeature[] = [
+  {
+    title: "Наем зала – 2 часа и 30 минути",
+    subDetail: "не се допускат външни лица",
+  },
+  {
+    title: "Детско меню – 20 бр.",
+    subDetails: [
+      "избор между пица или мини сандвичи с пуешко филе и гауда",
+      "Свежи зеленчукови пръчици (морков и краставица)",
+      "Плато със сезонни плодове",
+      "Домашно приготвени сладки (без добавена захар)",
+    ],
+  },
+  {
+    title: "Напитки – 20 бр.",
+    subDetail: "изворна вода или сокче",
+  },
+  {
+    title: "Кетъринг меню за родителите",
+    subDetails: [
+      "60 бр. домашни мини кюфтенца",
+      "60 бр. солени мини палачинки с различни вкусове",
+      "2 плато брускети с разнообразни вкусове",
+      "2 плато сладки тарталети",
+    ],
+  },
+  {
+    title:
+      "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
+    bold: true,
+  },
+  { title: "Избор на украса от нашите предложения", bold: true },
+];
 
-type PackageSize = "10" | "15";
+const LUX_PACKAGE_20_FEATURES: PackageFeature[] = [
+  {
+    title: "Наем зала – 2 часа и 30 минути",
+    subDetail: "не се допускат външни лица",
+  },
+  {
+    title: "Детско меню – 20 бр.",
+    subDetails: [
+      "избор между пица или мини сандвичи с пуешко филе и гауда",
+      "Свежи зеленчукови пръчици (морков и краставица)",
+      "Плато със сезонни плодове",
+      "Домашно приготвени сладки (без добавена захар)",
+    ],
+  },
+  {
+    title: "Напитки – 20 бр.",
+    subDetail: "изворна вода или сокче",
+  },
+  {
+    title: "Кетъринг меню за родителите",
+    subDetails: [
+      "60 бр. домашни мини кюфтенца",
+      "60 бр. солени мини палачинки с различни вкусове",
+      "2 плато брускети с разнообразни вкусове",
+      "2 плато сладки тарталети",
+    ],
+  },
+  {
+    title:
+      "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
+    bold: true,
+  },
+  { title: "Избор на украса от нашите предложения", bold: true },
+  { title: "Дигитална покана", bold: true },
+  { title: "Още нещо трябва да измислим", bold: true },
+];
+
+const DISCLAIMER = "* за всяко следващо дете се заплаща 14 € ";
+
+type PackageSize = "10" | "20";
 
 function PricesPackages() {
   const [activeTab, setActiveTab] = useState<PackageSize>("10");
@@ -173,18 +227,26 @@ function PricesPackages() {
           </h1>
           <div className="why-box">
             <p>
-              Рожденият ден е едно от най-специалните и вълнуващи преживявания в
-              живота на детето. В &quot;Детски център 1001 усмивки&quot;
-              разбираме важността на всеки такъв момент и се грижим за всеки
-              детайл, за да създадем незабравима приказна атмосфера за вашето
-              дете и близки.
+              ✨ Рожденият ден е едно от най-специалните и вълнуващи
+              преживявания в живота на детето. В &quot;Детски център 1001
+              усмивки&quot; разбираме важността на всеки такъв момент и се
+              грижим за всеки детайл, за да създадем незабравима приказна
+              атмосфера за вашето дете и близки.
             </p>
             <p>
-              Ние предлагаме пълна организация на празненството – от тематична
-              украса, кетъринг и аниматор, до музика и фотография. Работим с
-              опитни партньори, за да осигурим неповторимо изживяване.
+              Превърнете рождения ден в истинска приказка, изпълнена със смях,
+              игри и сладки изкушения. Ние създаваме уютна атмосфера, вкусна
+              храна и весело настроение, за да може празникът да остане скъп
+              спомен както за децата, така и за родителите. ✨
             </p>
-            <p>От нас – организацията. От вас – само забавлението!</p>
+            <p>От нас – организацията. От вас – само забавлението! 💛</p>
+            <p>
+              🎁 Подарете празник като от приказките! Местата ни се запълват
+              бързо, защото всяко тържество при нас е специално и организирано с
+              внимание към детайла. ✨ Запазете своята дата още днес и подарете
+              на детето си вълшебен спомен, който ще разказва с усмивка дълго
+              време! Очакваме ви с нетърпение! 🎈
+            </p>
           </div>
         </div>
 
@@ -196,9 +258,7 @@ function PricesPackages() {
                 <span className="pricing-panel-title">
                   Пакет Стандарт – 10 деца
                 </span>
-                <span className="quick-price">
-                  270 € <span>/ 528 лв.</span>
-                </span>
+                <span className="quick-price">340 €</span>
               </div>
             </div>
             <hr className="divider" />
@@ -206,7 +266,7 @@ function PricesPackages() {
               <li>
                 <span className="dot" />
                 <div>
-                  Наем зала – 2 часа
+                  Наем зала – 2 часа и 30 минути
                   <span className="feat-sub">не се допускат външни лица</span>
                 </div>
               </li>
@@ -215,7 +275,14 @@ function PricesPackages() {
                 <div>
                   Детско меню – 10 бр.
                   <span className="feat-sub">
-                    пица Маргарита, пилешки хапки с картофки или кроасан
+                    Пица или мини сандвичи с пуешко филе и гауда
+                  </span>
+                  <span className="feat-sub">
+                    Свежи зеленчукови пръчици (морков и краставица)
+                  </span>
+                  <span className="feat-sub">Плато със сезонни плодове</span>
+                  <span className="feat-sub">
+                    Домашно приготвени сладки (без добавена захар)
                   </span>
                 </div>
               </li>
@@ -229,24 +296,37 @@ function PricesPackages() {
               <li>
                 <span className="dot" />
                 <div>
-                  Кетъринг меню за родителите – 100 бр. ханки
+                  Кетъринг меню за родителите
+                  <span className="feat-sub">30 бр. домашни мини кюфтенца</span>
                   <span className="feat-sub">
-                    мини сандвичи, пилешки хапки, моцарелки и сиренца
+                    30 бр. солени мини палачинки с различни вкусове
                   </span>
+                  <span className="feat-sub">
+                    1 плато брускети с разнообразни вкусове
+                  </span>
+                  <span className="feat-sub">1 плато сладки тарталети</span>
                 </div>
               </li>
               <li>
                 <span className="dot" />
                 <div>
-                  <strong>Включени разядки/гризинки за децата</strong>
+                  <strong>
+                    Включени 2 аниматора (непрофесионални), които се грижат за
+                    игрите, организацията и доброто настроение на децата
+                  </strong>
+                </div>
+              </li>
+              <li>
+                <span className="dot" />
+                <div>
+                  <strong>Избор на украса от нашите предложения</strong>
                 </div>
               </li>
             </ul>
             <div className="rental-row">
               <div className="rental-label">Наем на зала (допълнително)</div>
               <div className="rental-price">
-                61.36 € / 120 лв.{" "}
-                <span className="rental-price-small">(за 1 час)</span>
+                70 € <span className="rental-price-small">(за 1 час)</span>
               </div>
             </div>
             <button
@@ -279,10 +359,10 @@ function PricesPackages() {
             </button>
             <button
               type="button"
-              className={`tab-btn ${activeTab === "15" ? "active" : ""}`}
-              onClick={() => setActiveTab("15")}
+              className={`tab-btn ${activeTab === "20" ? "active" : ""}`}
+              onClick={() => setActiveTab("20")}
             >
-              Пакети за 15 деца
+              Пакети за 20 деца
             </button>
           </div>
         </div>
@@ -291,15 +371,13 @@ function PricesPackages() {
           <div className="pkg-grid">
             <PackageCard
               name="Пакет Стандарт"
-              priceBgn="528"
-              priceEur="270"
+              priceEur="340"
               features={STANDARD_PACKAGE_10_FEATURES}
               disclaimer={DISCLAIMER}
             />
             <PackageCard
               name="Пакет Лукс"
-              priceBgn="645"
-              priceEur="330"
+              priceEur="390"
               features={LUX_PACKAGE_10_FEATURES}
               disclaimer={DISCLAIMER}
               featured
@@ -307,20 +385,18 @@ function PricesPackages() {
           </div>
         )}
 
-        {activeTab === "15" && (
+        {activeTab === "20" && (
           <div className="pkg-grid">
             <PackageCard
               name="Пакет Стандарт"
-              priceBgn="792"
-              priceEur="405"
-              features={STANDARD_PACKAGE_15_FEATURES}
+              priceEur="510"
+              features={STANDARD_PACKAGE_20_FEATURES}
               disclaimer={DISCLAIMER}
             />
             <PackageCard
               name="Пакет Лукс"
-              priceBgn="968"
               priceEur="495"
-              features={LUX_PACKAGE_15_FEATURES}
+              features={LUX_PACKAGE_20_FEATURES}
               disclaimer={DISCLAIMER}
               featured
             />

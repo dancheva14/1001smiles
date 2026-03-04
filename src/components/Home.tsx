@@ -2,7 +2,7 @@ import "./Home.css";
 
 function Home() {
   const scrollToEvents = () => {
-    window.location.hash = "#events";
+    window.location.hash = "#prices-birthday";
   };
 
   const scrollToContacts = () => {

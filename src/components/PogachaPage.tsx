@@ -5,20 +5,21 @@ import { Minus, Plus, ChevronDown } from "lucide-react";
 interface PackageFeature {
   title: string;
   subDetail?: string;
+  subDetails?: string[];
 }
 
 interface PricingCardProps {
   title: string;
   priceEur: string;
-  priceBgn: string;
   features?: PackageFeature[];
+  headerSubtitle?: string;
 }
 
 function PricingCard({
   title,
   priceEur,
-  priceBgn,
   features,
+  headerSubtitle,
 }: PricingCardProps) {
   const [expanded, setExpanded] = useState(true);
 
@@ -43,22 +44,29 @@ function PricingCard({
         </button>
       </div>
       <div className="pogacha-pricing-card-price">
-        <span className="pogacha-price-eur">{priceEur} €</span>
-        <span className="pogacha-price-bgn">{priceBgn}</span>
+        <span className="pogacha-price-eur">
+          {priceEur} € {headerSubtitle}
+        </span>
       </div>
       <div className="pogacha-pricing-card-divider" />
       {expanded && features && (
         <ul className="pogacha-pricing-features">
-          {features.map((feature, index) => (
-            <li key={index} className="pogacha-pricing-feature">
-              <span className="pogacha-feature-title">{feature.title}</span>
-              {feature.subDetail && (
-                <span className="pogacha-feature-subdetail">
-                  {feature.subDetail}
-                </span>
-              )}
-            </li>
-          ))}
+          {features.map((feature, index) => {
+            const details =
+              feature.subDetails ??
+              (feature.subDetail ? [feature.subDetail] : []);
+            return (
+              <li key={index} className="pogacha-pricing-feature">
+                <span className="pogacha-feature-title">{feature.title}</span>
+                {details.length > 0 &&
+                  details.map((detail, i) => (
+                    <span key={i} className="pogacha-feature-subdetail">
+                      {detail}
+                    </span>
+                  ))}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
@@ -67,21 +75,44 @@ function PricingCard({
 
 const POGACHA_PACKAGE_FEATURES: PackageFeature[] = [
   {
-    title: "Наем зала – 2 часа",
+    title: "Наем зала – 3 часа",
   },
   {
     title: "Тематична декорация",
     subDetail: "Винил, балонена арка, масичка за торта",
   },
   {
-    title: "Козуначена пита",
+    title: "🍞🍰🎂 Сладка обредна погача 1 кг.",
   },
   {
-    title: "Кетъринг меню - 50 бр. ханки",
-    subDetail: "две плата със солени или сладки хапки",
+    title: "🍫🍓🍬 Селекция от 40 бр. сладки изкушения:",
+    subDetails: [
+      "Брауни хапка с маскарпоне, сладко от горски плодове и филиран шоколад 10 бр.",
+      "Плодови тарталетки 10 бр.",
+      "Шоколадов шот с ягоди и маскарпоне 10 бр.",
+      "Ръчно приготвени шоколадови бонбони 10 бр.",
+    ],
   },
   {
-    title: "Кана домашна лимонада",
+    title: "🍞🍰🎂 Сладка обредна погача 1 кг.",
+  },
+  {
+    title: "🍢🍖🧀 Селекция от 40 бр. солени коктейлни хапки:",
+    subDetails: [
+      "Канапе с пушено свинско бонфиле 10 бр.",
+      "Канапе от немски фитнес бред с чедър и ементал 10 бр.",
+      "Тарталетка с млечен мус и сирене Рокфор 10 бр.",
+      "Тартар с пушена сьомга 10 бр.",
+    ],
+  },
+  {
+    title: "🥐🍏🍞 Печива:",
+    subDetails: [
+      "Прясно изпечени мини розички с ябълка и пудра захар 10 бр.",
+      "Прясно изпечени мини розички със сирене 10 бр.",
+      "Прясно изпечени мини кроасанчета с шоколад 10 бр.",
+      "Прясно изпечени мини кроасанчета със стафиди 10 бр.",
+    ],
   },
 ];
 
@@ -127,14 +158,13 @@ function PogachaPage() {
         <div className="pogacha-content-right">
           <PricingCard
             title="Пакет Погача"
-            priceEur="250.60"
-            priceBgn="490 лв."
+            priceEur="340 €"
             features={POGACHA_PACKAGE_FEATURES}
           />
           <PricingCard
-            title="Наем на зала"
-            priceEur="61.36"
-            priceBgn="120 лв. (за 1 час)"
+            title="Наем на зала (допълнително)"
+            priceEur="70"
+            headerSubtitle="(за 1 час)"
           />
           <button
             type="button"

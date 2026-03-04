@@ -1,16 +1,7 @@
-/* Same style as PricesPackages – variables and fonts */
+/* Extras page – same bg as other pages */
 .extras-page-section {
-  --pink: #ff6b9d;
-  --lilac: #c084fc;
-  --peach: #ffb347;
-  --brown: #8b6b52;
-  --text: #4a3728;
-  --muted: #9a8070;
-  --border: rgba(139, 107, 82, 0.13);
-  --shadow: 0 4px 24px rgba(139, 107, 82, 0.1);
-
-  padding: 3rem 2rem 4rem;
-  min-height: 60vh;
+  padding: 2rem;
+  min-height: 100vh;
   background-image:
     linear-gradient(
       160deg,
@@ -24,248 +15,438 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Nunito", sans-serif;
-  color: var(--text);
+  font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
+  color: #5e463e;
 }
 
-.extras-page-container {
-  max-width: 1280px;
-  width: 100%;
+.extras-container {
+  max-width: 1400px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: stretch;
 }
 
-.extras-text-row {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Hero */
+.extras-hero {
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: extrasFadeInUp 0.8s ease-out;
 }
 
-.extras-heading {
-  font-family: "Baloo 2", cursive;
-  font-size: clamp(1.9rem, 3.5vw, 2.5rem);
-  font-weight: 800;
+.extras-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #5e463e;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.emoji-icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  animation: extrasBounce 2s ease-in-out infinite;
+}
+
+.extras-subtitle {
+  font-size: 1.3rem;
+  color: #5e463e;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Extension Card - Featured */
+.extension-section {
+  margin-bottom: 2rem;
+}
+
+.extension-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #f0e6fa 100%);
+  border-radius: 24px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 3px solid transparent;
+  animation: extrasFadeInUp 0.8s ease-out 0.2s both;
+}
+
+.extension-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 60px rgba(118, 75, 162, 0.25);
+  border-color: #cea6fa;
+}
+
+.extension-icon {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  background: linear-gradient(135deg, #fabbbb 0%, #cea6fa 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: 0 8px 24px rgba(118, 75, 162, 0.3);
+  transition: all 0.4s ease;
+}
+
+.extension-card:hover .extension-icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.extension-content {
+  flex: 1;
+}
+
+.extension-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #5e463e;
+  margin: 0;
+}
+
+.extension-description {
+  font-size: 1.1rem;
+  color: #5e463e;
   line-height: 1.3;
-  margin: 0 0 0.5rem 0;
-  background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 55%);
+  margin-bottom: 0.5rem;
+}
+
+.extension-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.duration-badge {
+  background: rgba(255, 182, 193, 0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #5e463e;
+  border: 2px solid rgba(255, 182, 193, 0.5);
+}
+
+.price-tag {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fabbbb 0%, #cea6fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.extras-text-content {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
-  padding: 28px 32px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.extras-paragraph {
-  font-size: 0.96rem;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.75;
-  margin: 0;
-}
-
-.extras-paragraph strong {
-  color: var(--text);
-  font-weight: 800;
-}
-
-.extras-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.extras-cards-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.extras-pricing-card {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(14px);
-  border-radius: 24px;
-  padding: 28px 32px;
-  border: 1.5px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.extras-pricing-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
-}
-
-.extras-pricing-card-title {
-  font-family: "Baloo 2", cursive;
-  font-size: 1.25rem;
+/* Section Titles */
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  color: var(--text);
-  margin: 0;
+  color: #5e463e;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.extras-pricing-card-toggle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 107, 157, 0.12);
+/* Extras Grid */
+.extras-content {
+  margin-bottom: 5rem;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.extra-card {
+  background: linear-gradient(135deg, #fdd5d5 0%, #e0c8fa 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
   cursor: pointer;
+  animation: extrasFadeInUp 0.6s ease-out both;
+}
+
+.extra-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.extra-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.extra-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.extra-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.extra-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.extra-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #fabbbb 0%, #cea6fa 100%);
+}
+
+.extra-icon {
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.2s ease;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
-.extras-pricing-card-toggle:hover {
-  background: rgba(255, 107, 157, 0.2);
+.extra-card:hover .extra-icon {
+  transform: scale(1.15) rotate(360deg);
 }
 
-.extras-toggle-icon {
-  color: var(--pink);
+.extra-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #5e463e;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
 }
 
-.extras-toggle-icon-minus {
-  transform: rotate(90deg);
+.extra-description {
+  font-size: 1rem;
+  color: #5e463e;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-.extras-pricing-card-price {
-  font-family: "Baloo 2", cursive;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--text);
-  display: flex;
-  align-items: baseline;
-  gap: 0.25rem;
-}
-
-.extras-price-from {
-  font-size: 0.95rem;
+.extra-button {
+  padding: 0.8rem 2rem;
+  background: white;
+  color: #764ba2;
+  border: 2px solid #764ba2;
+  border-radius: 50px;
   font-weight: 600;
-  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
 }
 
-.extras-price-eur,
-.extras-price-bgn {
-  color: var(--text);
+.extra-button:hover {
+  background: #764ba2;
+  color: white;
+  transform: translateY(-2px);
 }
 
-.extras-price-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Summer Section */
+.summer-content {
+  margin-bottom: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+  border-radius: 30px;
+  box-shadow: 0 10px 40px rgba(255, 193, 7, 0.15);
 }
 
-.extras-price-row {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(139, 107, 82, 0.06);
+.summer-title {
+  color: #ff6b35;
 }
 
-.extras-price-row:last-child {
-  border-bottom: none;
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #5e463e;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.extras-duration-pill {
-  display: inline-block;
-  padding: 0.25rem 0.6rem;
+.summer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.summer-card {
+  background: white;
   border-radius: 20px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--pink);
-  background: linear-gradient(135deg, rgba(255, 107, 157, 0.12), rgba(192, 132, 252, 0.12));
-  border: 1px solid rgba(192, 132, 252, 0.2);
-  margin-bottom: 0.35rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 3px solid transparent;
+  animation: extrasFadeInUp 0.6s ease-out both;
 }
 
-.extras-price-row-values {
+.summer-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.summer-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.summer-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.summer-card:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.summer-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
+  border-color: #ff6b35;
+}
+
+.summer-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%);
+  border-radius: 50%;
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  font-family: "Baloo 2", cursive;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.2rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.4s ease;
 }
 
-.extras-price-row-divider {
-  height: 1px;
-  background: linear-gradient(90deg, var(--pink), var(--lilac));
-  margin: 0.5rem 0;
-  border-radius: 1px;
-  opacity: 0.4;
+.summer-card:hover .summer-icon {
+  transform: scale(1.15) rotate(360deg);
 }
 
-.extras-pricing-card-divider {
-  height: 2px;
+.summer-button {
+  padding: 0.7rem 1.8rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%);
+  color: white;
   border: none;
-  background: linear-gradient(90deg, var(--pink), var(--lilac));
-  margin: 1rem 0;
-  border-radius: 1px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  font-family: inherit;
 }
 
-.extras-pricing-disclaimer {
-  font-size: 0.78rem;
-  color: var(--muted);
-  font-weight: 500;
-  line-height: 1.5;
-  margin: 0;
-  padding-left: 1rem;
-  position: relative;
+.summer-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
 }
 
-.extras-pricing-disclaimer::before {
-  content: "●";
-  position: absolute;
-  left: 0;
-  color: var(--pink);
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #fabbbb 0%, #cea6fa 100%);
+  border-radius: 30px;
+  box-shadow: 0 10px 40px rgba(118, 75, 162, 0.3);
+  animation: extrasFadeInUp 0.8s ease-out 0.6s both;
+}
+
+.cta-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
 }
 
-@media (max-width: 1024px) {
-  .extras-cards-grid {
-    grid-template-columns: 1fr;
+.cta-text {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-button {
+  padding: 1.2rem 3rem;
+  background: white;
+  color: #764ba2;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes extrasFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes extrasBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .extras-page-section {
-    padding: 2rem 1rem 3rem;
+    padding: 1.5rem 1rem;
   }
 
-  .extras-heading {
-    font-size: 1.8rem;
+  .extras-title {
+    font-size: 2.5rem;
   }
 
-  .extras-paragraph {
-    font-size: 0.9rem;
+  .extension-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
   }
 
-  .extras-page-container {
-    gap: 2rem;
+  .extension-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
   }
 
-  .extras-text-content {
-    padding: 20px 24px;
+  .extension-title {
+    font-size: 1.6rem;
   }
 
-  .extras-cards-grid {
-    gap: 1.5rem;
+  .price-tag {
+    font-size: 2rem;
   }
 
-  .extras-pricing-card {
-    padding: 20px 24px;
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .extras-grid,
+  .summer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summer-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
   }
 }

@@ -5,20 +5,21 @@ import { Minus, Plus, ChevronDown } from "lucide-react";
 interface PackageFeature {
   title: string;
   subDetail?: string;
+  subDetails?: string[];
 }
 
 interface PricingCardProps {
   title: string;
   priceEur: string;
-  priceBgn: string;
   features?: PackageFeature[];
+  headerSubtitle?: string;
 }
 
 function PricingCard({
   title,
   priceEur,
-  priceBgn,
   features,
+  headerSubtitle,
 }: PricingCardProps) {
   const [expanded, setExpanded] = useState(true);
 
@@ -43,24 +44,31 @@ function PricingCard({
         </button>
       </div>
       <div className="gender-reveal-pricing-card-price">
-        <span className="gender-reveal-price-eur">{priceEur} €</span>
-        <span className="gender-reveal-price-bgn">{priceBgn}</span>
+        <span className="gender-reveal-price-eur">
+          {priceEur} € {headerSubtitle}
+        </span>
       </div>
       <div className="gender-reveal-pricing-card-divider" />
       {expanded && features && (
         <ul className="gender-reveal-pricing-features">
-          {features.map((feature, index) => (
-            <li key={index} className="gender-reveal-pricing-feature">
-              <span className="gender-reveal-feature-title">
-                {feature.title}
-              </span>
-              {feature.subDetail && (
-                <span className="gender-reveal-feature-subdetail">
-                  {feature.subDetail}
+          {features.map((feature, index) => {
+            const details =
+              feature.subDetails ??
+              (feature.subDetail ? [feature.subDetail] : []);
+            return (
+              <li key={index} className="gender-reveal-pricing-feature">
+                <span className="gender-reveal-feature-title">
+                  {feature.title}
                 </span>
-              )}
-            </li>
-          ))}
+                {details.length > 0 &&
+                  details.map((detail, i) => (
+                    <span key={i} className="gender-reveal-feature-subdetail">
+                      {detail}
+                    </span>
+                  ))}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
@@ -76,14 +84,34 @@ const GENDER_REVEAL_PACKAGE_FEATURES: PackageFeature[] = [
     subDetail: "Винил, балонена арка, масичка за торта",
   },
   {
-    title: "Козуначена пита",
+    title: "Сладка обредна погача 1 кг.",
   },
   {
-    title: "Кетъринг меню - 50 бр. ханки",
-    subDetail: "две плата със солени или сладки хапки",
+    title: "🍫🍓🍬 Селекция от 40 бр. сладки изкушения:",
+    subDetails: [
+      "Брауни хапка с маскарпоне, сладко от горски плодове и филиран шоколад 10 бр.",
+      "Плодови тарталетки 10 бр.",
+      "Шоколадов шот с ягоди и маскарпоне 10 бр.",
+      "Ръчно приготвени шоколадови бонбони 10 бр.",
+    ],
   },
   {
-    title: "Кана домашна лимонада",
+    title: "🍢🍖🧀 Селекция от 40 бр. солени коктейлни хапки:",
+    subDetails: [
+      "Канапе с пушено свинско бонфиле 10 бр.",
+      "Канапе от немски фитнес бред с чедър и ементал 10 бр.",
+      "Тарталетка с млечен мус и сирене Рокфор 10 бр.",
+      "Тартар с пушена сьомга 10 бр.",
+    ],
+  },
+  {
+    title: "🥐🍏🍞 Печива:",
+    subDetails: [
+      "Прясно изпечени мини розички с ябълка и пудра захар 10 бр.",
+      "Прясно изпечени мини розички със сирене 10 бр.",
+      "Прясно изпечени мини кроасанчета с шоколад 10 бр.",
+      "Прясно изпечени мини кроасанчета със стафиди 10 бр.",
+    ],
   },
 ];
 
@@ -124,14 +152,13 @@ function GenderRevealPartyPage() {
         <div className="gender-reveal-content-right">
           <PricingCard
             title="Пакет Парти за разкриване на пола"
-            priceEur="250.60"
-            priceBgn="490 лв."
+            priceEur="340"
             features={GENDER_REVEAL_PACKAGE_FEATURES}
           />
           <PricingCard
-            title="Наем на зала"
-            priceEur="61.36"
-            priceBgn="120 лв. (за 1 час)"
+            title="Наем на зала (допълнително)"
+            priceEur="70"
+            headerSubtitle="(за 1 час)"
           />
           <button
             type="button"
