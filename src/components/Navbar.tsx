@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import {
   Sparkles,
@@ -6,7 +6,6 @@ import {
   PartyPopper,
   Gift,
   Camera,
-  Layout,
   Heart,
   MessageCircle,
 } from "lucide-react";
@@ -20,9 +19,29 @@ const PRICES_DROPDOWN_ITEMS = [
   { label: "Допълнителни услуги", href: "#prices-extras" },
 ];
 
+const SCROLL_THRESHOLD = 60;
+const SCROLL_DELTA = 8;
+
 function Navbar() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
   const [pricesDropdownOpen, setPricesDropdownOpen] = useState(false);
+  const [scrollHidden, setScrollHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const dropdownRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        pricesDropdownOpen &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setPricesDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [pricesDropdownOpen]);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -36,6 +55,23 @@ function Navbar() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (y <= SCROLL_THRESHOLD) {
+        setScrollHidden(false);
+      } else if (y > lastScrollY.current + SCROLL_DELTA) {
+        setScrollHidden(true);
+      } else if (y < lastScrollY.current - SCROLL_DELTA) {
+        setScrollHidden(false);
+      }
+      lastScrollY.current = y;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const isActive = (hash: string) => {
     // If no hash and checking for home, or hash matches
     if (hash === "" && currentHash === "") return true;
@@ -43,7 +79,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrollHidden ? "navbar--scroll-hidden" : ""}`}>
       <div className="navbar-brand">
         <a
           href="#"
@@ -92,18 +128,27 @@ function Navbar() {
           </a>
         </li>
         <li
+          ref={dropdownRef}
           className="nav-item nav-item-dropdown"
           onMouseEnter={() => setPricesDropdownOpen(true)}
           onMouseLeave={() => setPricesDropdownOpen(false)}
         >
           <span
             className={`nav-link nav-link-dropdown ${currentHash?.startsWith("#prices") ? "active" : ""}`}
-            onClick={() => setPricesDropdownOpen((prev) => !prev)}
-            onKeyDown={(e) =>
-              e.key === "Enter" && setPricesDropdownOpen((prev) => !prev)
-            }
+            onClick={(e) => {
+              e.preventDefault();
+              setPricesDropdownOpen((prev) => !prev);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setPricesDropdownOpen((prev) => !prev);
+              }
+            }}
             role="button"
             tabIndex={0}
+            aria-expanded={pricesDropdownOpen}
+            aria-haspopup="true"
           >
             <Gift className="nav-link-icon" size={18} />
             Цени и пакети

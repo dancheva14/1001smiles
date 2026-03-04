@@ -1,48 +1,49 @@
 import { useState, useEffect } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./Gallery.css";
+import { publicUrl } from "../lib/publicUrl";
 
 // Примерни снимки - заменете с вашите реални снимки
 const galleryImages = [
   {
     id: 1,
-    src: "/images/party1.jpg",
+    src: publicUrl("images/party1.jpg"),
     alt: "Рожден ден с торта и балони",
     title: "Рожден Ден",
     description: "Незабравими моменти от детски рождени дни",
   },
   {
     id: 2,
-    src: "/images/party2.avif",
+    src: publicUrl("images/party2.avif"),
     alt: "Рожден ден с много игри и забавления",
     title: "Рожден ден",
     description: "Рожден ден с много игри и забавления",
   },
   {
     id: 3,
-    src: "/images/party3.jpg",
+    src: publicUrl("images/party3.jpg"),
     alt: "Кетъринг за родители",
     title: "Кетъринг за родители",
     description: "Вълнуващи моменти споделени с близки",
   },
   {
     id: 4,
-    src: "/images/party4.jpg",
+    src: publicUrl("images/party4.jpg"),
     alt: "Разкриване на пола с балони",
     title: "Разкриване на Пола",
     description: "Вълнуващи моменти споделени с близки",
   },
   {
     id: 5,
-    src: "/images/party5.png",
+    src: publicUrl("images/party5.png"),
     alt: "Специално парти събитие",
     title: "Специални Събития",
     description: "Уникални моменти за всеки повод",
   },
   {
     id: 6,
-    src: "/images/party6.jpeg",
+    src: publicUrl("images/party6.jpeg"),
     alt: "Разкриване на пола с балони",
     title: "Разкриване на Пола",
     description: "Вълнуващи моменти споделени с близки",
@@ -51,7 +52,6 @@ const galleryImages = [
 
 function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [direction, setDirection] = useState<"next" | "prev">("next");
 
   // Анимация за слайдовете
@@ -77,15 +77,13 @@ function Gallery() {
 
   // Автоматично превъртане
   useEffect(() => {
-    if (!isPlaying) return;
-
     const interval = setInterval(() => {
       setDirection("next");
       setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
     }, 5000); // Превърта на всеки 5 секунди
 
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, []);
 
   const goToNext = () => {
     setDirection("next");
@@ -150,7 +148,6 @@ function Gallery() {
             >
               <ChevronLeft className="icon" />
             </button>
-
             <button
               onClick={goToNext}
               className="slide-button slide-button-next"
@@ -158,7 +155,7 @@ function Gallery() {
             >
               <ChevronRight className="icon" />
             </button>
-
+            {/*
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               className="slide-button slide-button-play"
@@ -170,6 +167,7 @@ function Gallery() {
                 <Play className="icon" />
               )}
             </button>
+            */}
           </div>
 
           {/* Индикатори */}

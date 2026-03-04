@@ -74,7 +74,7 @@
 }
 
 .prices-page-bg .page-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800;
   line-height: 1.2;
@@ -205,14 +205,14 @@
 }
 
 .prices-page-bg .pricing-panel-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
 }
 
 .prices-page-bg .quick-price {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.45rem;
   font-weight: 800;
   color: var(--text);
@@ -289,7 +289,7 @@
 }
 
 .prices-page-bg .rental-price {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--text);
@@ -340,7 +340,7 @@
 }
 
 .prices-page-bg .packages-header h2 {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--text);
@@ -462,7 +462,7 @@
 }
 
 .prices-page-bg .pkg-name {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--muted);
@@ -472,7 +472,7 @@
 }
 
 .prices-page-bg .pkg-price {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--text);
@@ -530,6 +530,26 @@
   color: var(--lilac);
 }
 
+.prices-page-bg .pkg-feature-link {
+  color: var(--pink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.prices-page-bg .pkg-feature-link:hover {
+  text-decoration: underline;
+}
+
+.prices-page-bg .prices-hero-feature-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.prices-page-bg .prices-hero-feature-link:hover {
+  text-decoration: underline;
+  color: var(--pink);
+}
+
 .prices-page-bg .feat-detail {
   display: block;
   font-size: 0.78rem;
@@ -564,6 +584,13 @@
 
   .prices-page-bg .pkg-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Prevent "Препоръчан" badge from overlapping text on narrow cards */
+  .prices-page-bg .pkg-card.featured .featured-badge {
+    position: static;
+    display: inline-block;
+    margin: 12px 0 8px;
   }
 }
 

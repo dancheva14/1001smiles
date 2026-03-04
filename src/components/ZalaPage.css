@@ -71,7 +71,7 @@
 }
 
 .zala-page-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: clamp(2rem, 3.8vw, 3.2rem);
   font-weight: 800;
   line-height: 1.15;
@@ -162,7 +162,7 @@
 }
 
 .zala-stat-num {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--pink), var(--lilac));
@@ -207,7 +207,7 @@
   backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 10px 18px;
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--text);
@@ -234,7 +234,7 @@
 }
 
 .zala-section-label h2 {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--text);
@@ -367,7 +367,7 @@
 }
 
 .zala-detail-card h3 {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
@@ -425,7 +425,7 @@
 }
 
 .zala-cta-strip-left h2 {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.9rem;
   font-weight: 800;
   color: white;
@@ -495,10 +495,6 @@
   .zala-hero-band {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .zala-hero-right {
-    order: -1;
   }
 
   .zala-hero-photo img {

@@ -43,7 +43,7 @@
 }
 
 .about-us-header {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 800;
   margin: 0 0 1rem 0;
@@ -184,7 +184,7 @@
 }
 
 .contact-heading {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);

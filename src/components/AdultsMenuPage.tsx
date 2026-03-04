@@ -1,5 +1,6 @@
 import "./AdultsMenuPage.css";
 import { ChevronDown } from "lucide-react";
+import { publicUrl } from "../lib/publicUrl";
 
 interface MenuItem {
   name: string;
@@ -157,7 +158,7 @@ function AdultsMenuPage() {
           </button>
           <div className="adults-menu-image-container">
             <img
-              src="/images/parents.jpeg"
+              src={publicUrl("images/parents.jpeg")}
               alt="Родители"
               className="adults-menu-image"
             />

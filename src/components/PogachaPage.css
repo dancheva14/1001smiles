@@ -45,7 +45,7 @@
 }
 
 .pogacha-heading {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: clamp(1.9rem, 3.5vw, 2.5rem);
   font-weight: 800;
   line-height: 1.3;
@@ -173,7 +173,7 @@
 }
 
 .pogacha-pricing-card-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
@@ -207,7 +207,7 @@
 }
 
 .pogacha-pricing-card-price {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--text);
@@ -279,10 +279,6 @@
   .pogacha-page-container {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-
-  .pogacha-content-right {
-    order: -1;
   }
 }
 

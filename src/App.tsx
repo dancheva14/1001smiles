@@ -12,6 +12,7 @@ import GenderRevealPartyPage from "./components/GenderRevealPartyPage";
 import ChristeningPage from "./components/ChristeningPage";
 import ExtrasPage from "./components/ExtrasPage";
 import ZalaPage from "./components/ZalaPage";
+import ThemesPage from "./components/ThemesPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     const scrollToTop = () => {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;  
+      document.body.scrollTop = 0;
     };
 
     const handleHashChange = () => {
@@ -77,6 +78,7 @@ function App() {
           currentHash !== "#prices-extras" && <Home />}
         {currentHash === "#gallery" && <Gallery />}
         {currentHash === "#zala" && <ZalaPage />}
+        {currentHash === "#themes" && <ThemesPage />}
         {currentHash === "#about-us" && <AboutUs />}
         {currentHash === "#contacts" && <Contacts />}
       </main>

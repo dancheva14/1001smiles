@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./PogachaPage.css";
 import { Minus, Plus, ChevronDown } from "lucide-react";
+import { publicUrl } from "../lib/publicUrl";
 
 interface PackageFeature {
   title: string;
@@ -45,7 +46,7 @@ function PricingCard({
       </div>
       <div className="pogacha-pricing-card-price">
         <span className="pogacha-price-eur">
-          {priceEur} € {headerSubtitle}
+          {priceEur} {headerSubtitle}
         </span>
       </div>
       <div className="pogacha-pricing-card-divider" />
@@ -148,7 +149,7 @@ function PogachaPage() {
 
             <div className="pogacha-image-container">
               <img
-                src="/images/pogacha.jpeg"
+                src={publicUrl("images/pogacha.jpeg")}
                 alt="Погача"
                 className="pogacha-image"
               />

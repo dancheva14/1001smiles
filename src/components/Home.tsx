@@ -1,4 +1,5 @@
 import "./Home.css";
+import { publicUrl } from "../lib/publicUrl";
 
 function Home() {
   const scrollToEvents = () => {
@@ -55,14 +56,14 @@ function Home() {
   ];
 
   const partyImages = [
-    "/images/parties/birthday.jpg",
-    "/images/parties/birthday3.jpg",
-    "/images/parties/babyShower.jpeg",
-    "/images/parties/babyParty.jpg",
-    "/images/parties/birthday2.jpg",
-    "/images/parties/animalsBirthday.jpg",
-    "/images/parties/birthday1.jpg",
-    "/images/parties/birthday4.jpg",
+    publicUrl("images/parties/birthday.jpg"),
+    publicUrl("images/parties/birthday3.jpg"),
+    publicUrl("images/parties/babyShower.jpeg"),
+    publicUrl("images/parties/babyParty.jpg"),
+    publicUrl("images/parties/birthday2.jpg"),
+    publicUrl("images/parties/animalsBirthday.jpg"),
+    publicUrl("images/parties/birthday1.jpg"),
+    publicUrl("images/parties/birthday4.jpg"),
   ];
 
   const galleryItems = [

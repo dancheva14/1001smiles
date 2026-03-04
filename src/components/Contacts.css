@@ -43,7 +43,7 @@
 }
 
 .contacts-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 800;
   line-height: 1.3;
@@ -196,7 +196,7 @@
 }
 
 .success-title {
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 0.75rem;

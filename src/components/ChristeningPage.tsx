@@ -1,4 +1,5 @@
 import "./ChristeningPage.css";
+import { publicUrl } from "../lib/publicUrl";
 
 function ChristeningPage() {
   return (
@@ -34,22 +35,22 @@ function ChristeningPage() {
         <div className="christening-content-right">
           <div className="christening-images-container">
             <img
-              src="/images/krustene.jpg"
+              src={publicUrl("images/krustene.jpg")}
               alt="Кръщене"
               className="christening-image"
             />
             <img
-              src="/images/krustene4.jpg"
+              src={publicUrl("images/krustene4.jpg")}
               alt="Кръщене"
               className="christening-image"
             />
             <img
-              src="/images/krustene3.jpg"
+              src={publicUrl("images/krustene3.jpg")}
               alt="Кръщене"
               className="christening-image"
             />
             <img
-              src="/images/krustene2.jpg"
+              src={publicUrl("images/krustene2.jpg")}
               alt="Кръщене"
               className="christening-image"
             />

@@ -1,10 +1,11 @@
 import "./ZalaPage.css";
+import { publicUrl } from "../lib/publicUrl";
 
 const HALL_IMAGES = {
-  hero: "/images/Hall/kidscenter1.jpg",
-  galleryTall: "/images/Hall/kidscenter2.jpg",
-  gallery1: "/images/Hall/kidscnter.jpg",
-  gallery2: "/images/Hall/kidscenter1.jpg",
+  hero: publicUrl("images/Hall/kidscenter1.jpg"),
+  galleryTall: publicUrl("images/Hall/kidscenter2.jpg"),
+  gallery1: publicUrl("images/Hall/kidscnter.jpg"),
+  gallery2: publicUrl("images/Hall/kidscenter1.jpg"),
 };
 
 function ZalaPage() {

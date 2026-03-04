@@ -36,7 +36,7 @@
   font-weight: 800;
   line-height: 1.4;
   padding-bottom: 0.1em;
-  font-family: "Baloo 2", cursive;
+  font-family: "Nunito", sans-serif;
   background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 50%, #ffb347 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -270,5 +270,16 @@
   .nav-item-dropdown .dropdown-menu {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* On phone: hide navbar on scroll down, show on scroll up */
+@media (max-width: 768px) {
+  .navbar {
+    transition: transform 0.3s ease-out;
+  }
+
+  .navbar.navbar--scroll-hidden {
+    transform: translateY(-100%);
   }
 }

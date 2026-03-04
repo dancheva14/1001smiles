@@ -6,6 +6,8 @@ interface PackageFeature {
   subDetail?: string;
   subDetails?: string[];
   bold?: boolean;
+  /** If set, the title is rendered as a link to this hash (e.g. "#themes") */
+  linkHash?: string;
 }
 
 interface PackageCardProps {
@@ -41,7 +43,13 @@ function PackageCard({
               <li key={index} className={feature.bold ? "bold-item" : ""}>
                 <span className="check">{feature.bold ? "✦" : "●"}</span>
                 <div>
-                  {feature.title}
+                  {feature.linkHash ? (
+                    <a href={feature.linkHash} className="pkg-feature-link">
+                      {feature.title}
+                    </a>
+                  ) : (
+                    feature.title
+                  )}
                   {details.length > 0 &&
                     details.map((detail, i) => (
                       <span key={i} className="feat-detail">
@@ -91,7 +99,11 @@ const STANDARD_PACKAGE_10_FEATURES: PackageFeature[] = [
       "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
     bold: true,
   },
-  { title: "Избор на украса от нашите предложения", bold: true },
+  {
+    title: "Избор на украса от нашите предложения",
+    bold: true,
+    linkHash: "#themes",
+  },
 ];
 
 const LUX_PACKAGE_10_FEATURES: PackageFeature[] = [
@@ -126,7 +138,11 @@ const LUX_PACKAGE_10_FEATURES: PackageFeature[] = [
       "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
     bold: true,
   },
-  { title: "Избор на украса от нашите предложения", bold: true },
+  {
+    title: "Избор на украса от нашите предложения",
+    bold: true,
+    linkHash: "#themes",
+  },
   { title: "Дигитална покана", bold: true },
   { title: "Още нещо трябва да измислим", bold: true },
 ];
@@ -163,7 +179,11 @@ const STANDARD_PACKAGE_20_FEATURES: PackageFeature[] = [
       "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
     bold: true,
   },
-  { title: "Избор на украса от нашите предложения", bold: true },
+  {
+    title: "Избор на украса от нашите предложения",
+    bold: true,
+    linkHash: "#themes",
+  },
 ];
 
 const LUX_PACKAGE_20_FEATURES: PackageFeature[] = [
@@ -198,7 +218,11 @@ const LUX_PACKAGE_20_FEATURES: PackageFeature[] = [
       "Включени 2 аниматора (непрофесионални), които се грижат за игрите, организацията и доброто настроение на децата",
     bold: true,
   },
-  { title: "Избор на украса от нашите предложения", bold: true },
+  {
+    title: "Избор на украса от нашите предложения",
+    bold: true,
+    linkHash: "#themes",
+  },
   { title: "Дигитална покана", bold: true },
   { title: "Още нещо трябва да измислим", bold: true },
 ];
@@ -319,7 +343,9 @@ function PricesPackages() {
               <li>
                 <span className="dot" />
                 <div>
-                  <strong>Избор на украса от нашите предложения</strong>
+                  <a href="#themes" className="prices-hero-feature-link">
+                    <strong>Избор на украса от нашите предложения</strong>
+                  </a>
                 </div>
               </li>
             </ul>

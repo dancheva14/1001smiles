@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./GenderRevealPartyPage.css";
 import { Minus, Plus, ChevronDown } from "lucide-react";
+import { publicUrl } from "../lib/publicUrl";
 
 interface PackageFeature {
   title: string;
@@ -138,12 +139,12 @@ function GenderRevealPartyPage() {
 
           <div className="gender-reveal-image-container">
             <img
-              src="/images/genderRevealParty.jpg"
+              src={publicUrl("images/genderRevealParty.jpg")}
               alt="Парти за разкриване на пола"
               className="gender-reveal-image"
             />
             <img
-              src="/images/genderReveal.jpg"
+              src={publicUrl("images/genderReveal.jpg")}
               alt="Парти за разкриване на пола"
               className="gender-reveal-image"
             />
