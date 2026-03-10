@@ -38,6 +38,7 @@
 }
 
 .confetti {
+  font-size: 35px;
   position: absolute;
   border-radius: 2px;
   animation: float linear infinite;
@@ -45,8 +46,8 @@
 }
 
 .confetti:nth-child(1) {
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background: var(--pink);
   top: 12%;
   left: 8%;
@@ -54,8 +55,8 @@
 }
 
 .confetti:nth-child(2) {
-  width: 8px;
-  height: 8px;
+  width: 13px;
+  height: 13px;
   background: var(--lilac);
   top: 22%;
   left: 22%;
@@ -64,8 +65,8 @@
 }
 
 .confetti:nth-child(3) {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   background: var(--peach);
   top: 10%;
   left: 50%;
@@ -74,8 +75,8 @@
 }
 
 .confetti:nth-child(4) {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   background: var(--mint);
   top: 18%;
   left: 70%;
@@ -84,8 +85,8 @@
 }
 
 .confetti:nth-child(5) {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   background: var(--pink);
   top: 30%;
   left: 85%;
@@ -94,8 +95,8 @@
 }
 
 .confetti:nth-child(6) {
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   background: var(--lilac);
   top: 50%;
   left: 5%;
@@ -104,8 +105,8 @@
 }
 
 .confetti:nth-child(7) {
-  width: 11px;
-  height: 11px;
+  width: 15px;
+  height: 15px;
   background: var(--peach);
   top: 35%;
   left: 38%;
@@ -114,18 +115,51 @@
 }
 
 .confetti:nth-child(8) {
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   background: var(--mint);
   top: 55%;
   left: 62%;
   animation-duration: 8.5s;
   animation-delay: -6s;
 }
+.confetti:nth-child(9) {
+  width: 15px;
+  height: 15px;
+  top: 70%;
+  left: 80%;
+  animation-duration: 10s;
+  animation-delay: -8s;
+}
+
+.confetti:nth-child(10) {
+  width: 15px;
+  height: 15px;
+  top: 20%;
+  left: 30%;
+  animation-duration: 10s;
+  animation-delay: -8s;
+}
+.confetti:nth-child(11) {
+  width: 15px;
+  height: 15px;
+  top: 25%;
+  left: 15%;
+  animation-duration: 10s;
+  animation-delay: -8s;
+}
+.confetti:nth-child(12) {
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 80%;
+  animation-duration: 10s;
+  animation-delay: -8s;
+}
 
 .star {
   position: absolute;
-  font-size: 22px;
+  font-size: 35px;
   animation: float linear infinite;
   pointer-events: none;
 }

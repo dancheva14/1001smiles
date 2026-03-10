@@ -15,8 +15,8 @@ const EXTRAS_ITEMS = [
   },
   {
     icon: "🍭",
-    title: "Машина за захарен памук",
-    description: "Сладко изкушение, което децата обожават!",
+    title: "Пяна парти",
+    description: "Истинско лятно приключение с много настроение.",
   },
   {
     icon: "🎊",
@@ -28,6 +28,18 @@ const EXTRAS_ITEMS = [
     title: "Фокусник",
     description:
       "Магично шоу, което впечатлява както малките, така и по-големите гости.",
+  },
+  {
+    icon: "🎊",
+    title: "Балонена къща",
+    description:
+      "Балонена къща за деца, която може да се използва за снимки и забавления.",
+  },
+  {
+    icon: "🎨",
+    title: "Тематични работилнички",
+    description:
+      "Работнички за деца, които могат да се използват за забавления и образователни игри.",
   },
 ];
 
@@ -53,6 +65,12 @@ const SUMMER_ITEMS = [
     title: "Футболно парти",
     description:
       "За всички малки шампиони, които обичат играта и състезанията.",
+  },
+  {
+    icon: "🎨",
+    title: "Тематични работилнички",
+    description:
+      "Работнички за деца, които могат да се използват за забавления и образователни игри.",
   },
 ];
 
@@ -91,7 +109,7 @@ function ExtrasPage() {
               <div className="extension-details">
                 <span className="duration-badge">30 мин.</span>
                 <span className="duration-badge">60 мин.</span>
-                <span className="price-tag">30 € / 50 €</span>
+                <span className="price-tag">40 € / 70 €</span>
               </div>
             </div>
           </div>

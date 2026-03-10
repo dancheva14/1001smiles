@@ -38,7 +38,7 @@ function ZalaPage() {
               цветове и приказни мотиви, а всеки ъгъл е обмислен до детайл.
             </p>
             <p>
-              Залата разполага с над <strong>120 кв.м.</strong> игрово и парти
+              Залата разполага с над <strong>167 кв.м.</strong> игрово и парти
               пространство, оборудвано с модерни мебели, безопасни покрития и
               богат избор от игри и занимания за деца от всички възрасти.
             </p>
@@ -52,7 +52,7 @@ function ZalaPage() {
             <div className="zala-pill">🛡️ Безопасни покрития</div>
             <div className="zala-pill">🌡️ Климатизирана</div>
             <div className="zala-pill">♿ Достъпна среда</div>
-            <div className="zala-pill">🚗 Паркинг</div>
+            {/*<div className="zala-pill">🚗 Паркинг</div>*/}
             <div className="zala-pill">🎵 Аудио система</div>
             <div className="zala-pill">📡 Безплатен Wi-Fi</div>
           </div>
@@ -66,17 +66,17 @@ function ZalaPage() {
           </div>
           <div className="zala-stats-row">
             <div className="zala-stat-card">
-              <div className="zala-stat-num">120+</div>
+              <div className="zala-stat-num">160+</div>
               <div className="zala-stat-lbl">кв.м. пространство</div>
             </div>
             <div className="zala-stat-card">
               <div className="zala-stat-num">50</div>
               <div className="zala-stat-lbl">места за гости</div>
             </div>
-            <div className="zala-stat-card">
+            {/*<div className="zala-stat-card">
               <div className="zala-stat-num">8г.</div>
               <div className="zala-stat-lbl">опит и любов</div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

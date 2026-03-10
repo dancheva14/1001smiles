@@ -14,7 +14,7 @@ const PRICES_DROPDOWN_ITEMS = [
   { label: "Рожден ден/имен ден", href: "#prices-birthday" },
   { label: "Погача", href: "#prices-pogacha" },
   { label: "Парти за разкриване на пола", href: "#prices-gender-reveal" },
-  { label: "Кръщене", href: "#prices-christening" },
+  /*{ label: "Кръщене", href: "#prices-christening" },*/
   { label: "Меню възрастни", href: "#prices-adults" },
   { label: "Допълнителни услуги", href: "#prices-extras" },
 ];

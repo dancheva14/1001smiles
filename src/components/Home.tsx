@@ -89,9 +89,11 @@ function Home() {
         <div className="confetti" />
         <div className="confetti" />
         <div className="confetti" />
-        <div className="star">⭐</div>
+        <div className="confetti">🎉</div>
+        <div className="confetti">🎉</div>
+        <div className="confetti">🎂</div>
+        <div className="confetti">🎂</div>
         <div className="star">🌟</div>
-        <div className="star">✨</div>
 
         <div className="hero-content">
           <div className="hero-tag">✨ Детски парти център</div>
@@ -122,7 +124,7 @@ function Home() {
               📞 Свържи се с нас
             </a>
           </div>
-          <div className="hero-stats">
+          {/*<div className="hero-stats">
             <div className="stat">
               <div className="stat-num">500+</div>
               <div className="stat-label">щастливи семейства</div>
@@ -135,7 +137,7 @@ function Home() {
               <div className="stat-num">8г.</div>
               <div className="stat-label">опит и любов</div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </section>
 
