@@ -24,9 +24,13 @@ function Footer() {
         </div>
         <div className="footer-links">
           <h5>Контакти</h5>
-          <a href="#contacts">гр. Перник, ул. Волга 28</a>
+          <a href="#contacts">
+            гр. Перник, кв. Изток, ул. Карл Маркс 30 /сградата до моста/
+          </a>
           <a href="tel:0893535084">0893 53 50 84</a>
-          <a href="mailto:1001smiles@gmail.com">1001smiles@gmail.com</a>
+          <a href="mailto:smeholandia1001@gmail.com">
+            smeholandia1001@gmail.com
+          </a>
         </div>
       </div>
       <div className="footer-bottom">

@@ -1,12 +1,12 @@
 import "./ZalaPage.css";
-import { publicUrl } from "../lib/publicUrl";
+//import { publicUrl } from "../lib/publicUrl";
 
-const HALL_IMAGES = {
+/*const HALL_IMAGES = {
   hero: publicUrl("images/Hall/kidscenter1.jpg"),
   galleryTall: publicUrl("images/Hall/kidscenter2.jpg"),
   gallery1: publicUrl("images/Hall/kidscnter.jpg"),
   gallery2: publicUrl("images/Hall/kidscenter1.jpg"),
-};
+};*/
 
 function ZalaPage() {
   const scrollToContacts = () => {
@@ -48,20 +48,12 @@ function ZalaPage() {
               наслаждавате, ние се грижим за всичко останало.
             </p>
           </div>
-          <div className="zala-feature-pills">
-            <div className="zala-pill">🛡️ Безопасни покрития</div>
-            <div className="zala-pill">🌡️ Климатизирана</div>
-            <div className="zala-pill">♿ Достъпна среда</div>
-            {/*<div className="zala-pill">🚗 Паркинг</div>*/}
-            <div className="zala-pill">🎵 Аудио система</div>
-            <div className="zala-pill">📡 Безплатен Wi-Fi</div>
-          </div>
         </div>
         <div className="zala-hero-right">
           <div className="zala-hero-photo">
-            <img src={HALL_IMAGES.hero} alt="Детска зала 1001 усмивки" />
+            {/*  <img src={HALL_IMAGES.hero} alt="Детска зала 1001 усмивки" />*/}
             <div className="zala-hero-photo-badge">
-              📍 гр. Перник, ул. Волга 28
+              📍 гр. Перник, кв. Изток, ул. Карл Маркс 30 /сградата до моста/
             </div>
           </div>
           <div className="zala-stats-row">
@@ -78,10 +70,16 @@ function ZalaPage() {
               <div className="zala-stat-lbl">опит и любов</div>
             </div>*/}
           </div>
+          <div className="zala-feature-pills">
+            <div className="zala-pill">🛡️ Безопасни покрития</div>
+            <div className="zala-pill">🌡️ Климатизирана</div>
+            <div className="zala-pill">🎵 Аудио система</div>
+            <div className="zala-pill">📡 Безплатен Wi-Fi</div>
+          </div>
         </div>
       </section>
 
-      <section className="zala-gallery-section">
+      {/*<section className="zala-gallery-section">
         <div className="zala-section-label">
           <h2>
             Разгледайте <span>залата</span>
@@ -112,7 +110,7 @@ function ZalaPage() {
             <div className="zala-gal-caption">🏃 Активни игри и движение</div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       <section className="zala-details-section">
         <div className="zala-section-label" style={{ marginBottom: "28px" }}>

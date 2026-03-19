@@ -468,13 +468,13 @@
 }
 
 .why-item {
-  padding: 32px 24px;
+  padding: 12px;
   text-align: center;
 }
 
 .why-icon {
   font-size: 2.5rem;
-  margin-bottom: 16px;
+  margin-bottom: 3px;
 }
 
 .why-item h4 {
@@ -482,7 +482,7 @@
   font-size: 1.1rem;
   color: var(--text-dark);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 3 px;
 }
 
 .why-item p {

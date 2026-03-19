@@ -66,7 +66,7 @@ function Home() {
     publicUrl("images/parties/birthday4.jpg"),
   ];
 
-  const galleryItems = [
+  /*const galleryItems = [
     { emoji: "🎂", label: "Рожден ден – Мия, 5г.", src: partyImages[0] },
     { emoji: "🌸", label: "Именен ден – Стефани", src: partyImages[1] },
     { emoji: "🍼", label: "Baby shower", src: partyImages[2] },
@@ -75,7 +75,7 @@ function Home() {
     { emoji: "✨", label: "Тематично парти", src: partyImages[5] },
     { emoji: "🎉", label: "Рожден ден – Лея, 7г.", src: partyImages[6] },
     { emoji: "💛", label: "Именен ден – Виктор", src: partyImages[7] },
-  ];
+  ];*/
 
   return (
     <>
@@ -181,7 +181,7 @@ function Home() {
       </section>
 
       {/* Gallery preview */}
-      <section className="gallery-section">
+      {/*<section className="gallery-section">
         <h2 className="section-title">
           От нашата <span>галерия</span>
         </h2>
@@ -206,7 +206,7 @@ function Home() {
             </a>
           ))}
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA banner */}
       <section className="cta-banner">

@@ -5,7 +5,7 @@ import {
   Home,
   PartyPopper,
   Gift,
-  Camera,
+  //Camera,
   Heart,
   MessageCircle,
 } from "lucide-react";
@@ -172,7 +172,7 @@ function Navbar() {
             </ul>
           )}
         </li>
-        <li className="nav-item">
+        {/*<li className="nav-item">
           <a
             href="#gallery"
             className={`nav-link ${isActive("#gallery") ? "active" : ""}`}
@@ -180,7 +180,7 @@ function Navbar() {
             <Camera className="nav-link-icon" size={18} />
             Галерия
           </a>
-        </li>
+        </li>*/}
         <li className="nav-item">
           <a
             href="#about-us"

@@ -2,8 +2,11 @@ import "./AboutUs.css";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 function AboutUs() {
-  const address = "гр. Перник, ул. Волга 28";
-  const encodedAddress = encodeURIComponent(address);
+  const address =
+    "гр. Перник, кв. Изток, ул. Карл Маркс 30 /сградата до моста/";
+  const encodedAddress = encodeURIComponent(
+    'Pernik, Iztok, ul. "Karl Marks" 30',
+  );
 
   return (
     <section id="about-us" className="about-us-section">
@@ -89,7 +92,7 @@ function AboutUs() {
             </div>
             <div className="contact-details">
               <h3 className="contact-heading">E-mail</h3>
-              <p className="contact-text">1001smiles@gmail.com</p>
+              <p className="contact-text">smeholandia1001@gmail.com</p>
             </div>
           </div>
 
