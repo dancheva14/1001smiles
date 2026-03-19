@@ -55,7 +55,7 @@ function Home() {
     },
   ];
 
-  const partyImages = [
+  /*const partyImages = [
     publicUrl("images/parties/birthday.jpg"),
     publicUrl("images/parties/birthday3.jpg"),
     publicUrl("images/parties/babyShower.jpeg"),
