@@ -433,4 +433,4 @@ function PricesPackages() {
   );
 }
 
-export default BirthdayPackages;
+export default PricesPackages;
