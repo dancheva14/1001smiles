@@ -1,6 +1,5 @@
 import "./HourlyPlayPage.css";
 import { ChevronDown } from "lucide-react";
-import { publicUrl } from "../lib/publicUrl";
 
 const BENEFITS = [
   "Безопасна и уютна среда за децата",
@@ -36,6 +35,11 @@ function HourlyPlayPage() {
                   <li key={benefit}>✔️ {benefit}</li>
                 ))}
               </ul>
+            </div>
+            <div className="hourly-play-price-box">
+              <span className="hourly-play-price-label">Цена:</span>
+              <span className="hourly-play-price-value">5 €</span>
+              <span className="hourly-play-price-unit">за 1 час</span>
             </div>
             <p className="hourly-play-paragraph">
               Подари си 1–2 часа спокойствие, докато твоето дете играе и се

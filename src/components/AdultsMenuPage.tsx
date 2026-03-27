@@ -2,7 +2,7 @@ import "./AdultsMenuPage.css";
 import { ChevronDown } from "lucide-react";
 import { publicUrl } from "../lib/publicUrl";
 
-interface MenuItem {
+/*interface MenuItem {
   name: string;
   description?: string;
   quantity?: string;
@@ -10,7 +10,7 @@ interface MenuItem {
   priceBgn?: string;
 }
 
-const MENU_ITEMS: MenuItem[] = [
+/*const MENU_ITEMS: MenuItem[] = [
   {
     name: "Мини кроасани с масло 60гр.",
     quantity: "10 бр.",
@@ -97,8 +97,8 @@ const MENU_ITEMS: MenuItem[] = [
     priceBgn: "7 лв.",
   },
 ];
-
-function MenuItemCard({ item }: { item: MenuItem }) {
+*/
+/*function MenuItemCard({ item }: { item: MenuItem }) {
   return (
     <div className="adults-menu-item">
       <div className="adults-menu-item-header">
@@ -123,7 +123,7 @@ function MenuItemCard({ item }: { item: MenuItem }) {
       )}
     </div>
   );
-}
+}*/
 
 function AdultsMenuPage() {
   const scrollToContacts = () => {

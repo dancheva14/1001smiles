@@ -121,6 +121,41 @@
   animation-delay: 0.18s;
 }
 
+.hourly-play-price-box {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  align-self: flex-start;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 157, 0.12),
+    rgba(192, 132, 252, 0.12)
+  );
+  border: 1px solid rgba(255, 107, 157, 0.28);
+  animation: hourlyPulse 2s ease-in-out infinite;
+}
+
+.hourly-play-price-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.hourly-play-price-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--pink);
+  line-height: 1;
+}
+
+.hourly-play-price-unit {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .hourly-play-consultation-btn {
   padding: 18px 24px;
   background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 50%, #ff9f43 100%);
