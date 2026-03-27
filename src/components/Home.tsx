@@ -1,5 +1,5 @@
 import "./Home.css";
-import { publicUrl } from "../lib/publicUrl";
+//import { publicUrl } from "../lib/publicUrl";
 
 function Home() {
   const scrollToEvents = () => {

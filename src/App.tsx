@@ -8,6 +8,7 @@ import Gallery from "./components/Gallery";
 import PricesPackages from "./components/PricesPackages";
 import PogachaPage from "./components/PogachaPage";
 import AdultsMenuPage from "./components/AdultsMenuPage";
+import HourlyPlayPage from "./components/HourlyPlayPage";
 import GenderRevealPartyPage from "./components/GenderRevealPartyPage";
 import ChristeningPage from "./components/ChristeningPage";
 import ExtrasPage from "./components/ExtrasPage";
@@ -63,6 +64,7 @@ function App() {
         {currentHash === "#events" && <Home />}
         {(currentHash === "#prices-birthday" ||
           currentHash === "#prices-nameday") && <PricesPackages />}
+        {currentHash === "#prices-hourly-play" && <HourlyPlayPage />}
         {currentHash === "#prices-pogacha" && <PogachaPage />}
         {currentHash === "#prices-adults" && <AdultsMenuPage />}
         {currentHash === "#prices-gender-reveal" && <GenderRevealPartyPage />}
@@ -71,6 +73,7 @@ function App() {
         {currentHash.startsWith("#prices-") &&
           currentHash !== "#prices-birthday" &&
           currentHash !== "#prices-nameday" &&
+          currentHash !== "#prices-hourly-play" &&
           currentHash !== "#prices-pogacha" &&
           currentHash !== "#prices-adults" &&
           currentHash !== "#prices-gender-reveal" &&

@@ -12,6 +12,7 @@ import {
 
 const PRICES_DROPDOWN_ITEMS = [
   { label: "Рожден ден/имен ден", href: "#prices-birthday" },
+  { label: "Почасова игра", href: "#prices-hourly-play" },
   { label: "Погача", href: "#prices-pogacha" },
   { label: "Парти за разкриване на пола", href: "#prices-gender-reveal" },
   /*{ label: "Кръщене", href: "#prices-christening" },*/

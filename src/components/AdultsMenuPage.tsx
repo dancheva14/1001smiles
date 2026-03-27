@@ -161,19 +161,19 @@ function AdultsMenuPage() {
             ЗАЯВИ КОНСУЛТАЦИЯ
             <ChevronDown className="adults-menu-btn-icon" size={20} />
           </button>
+        </div>
+        <div className="adults-menu-content-right">
+          {/* <div className="adults-menu-list">
+            {MENU_ITEMS.map((item, index) => (
+              <MenuItemCard key={index} item={item} />
+            ))}
+          </div> */}
           <div className="adults-menu-image-container">
             <img
               src={publicUrl("images/parents.jpeg")}
               alt="Родители"
               className="adults-menu-image"
             />
-          </div>
-        </div>
-        <div className="adults-menu-content-right">
-          <div className="adults-menu-list">
-            {MENU_ITEMS.map((item, index) => (
-              <MenuItemCard key={index} item={item} />
-            ))}
           </div>
         </div>
       </div>
