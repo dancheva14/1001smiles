@@ -5,29 +5,28 @@ const KID_PARENT_INCLUDES = [
   "Непрофесионален аниматор с интерактивна програма",
   "Тематична украса по избор",
   "Пълно меню за детето",
-  "Меню за родителя",
+  "Меню за придружителя",
 ];
 
 const SECOND_PARENT_INCLUDES = [
-  "Пълно меню за родителя",
+  "Пълно меню за придружителя",
   "Напитки (вода или сок)",
-  "Достъп до всички активности",
 ];
 
 const KIDS_MENU_ITEMS = [
-  "Пица или мини сандвичи с пушена филе и гауда",
+  "Пица или мини сандвич с пилешко филе и гауда",
   "Свежи зеленчукови пръчици (моркови и краставици)",
   "Плато със сезонни плодове",
-  "Домашно приготвени сладки (без добавена захар)",
-  "Напитки – избор вода или сок",
+  "Домашно приготвени сладки",
+  "Напитка (вода или сок)",
 ];
 
 const PARENTS_MENU_ITEMS = [
   "Домашни мини кюфтенца",
   "Солени мини палачинки с различни вкусове",
-  "1 плато брускети с разнообразни вкусове",
-  "1 плато сладки тарталети",
-  "Напитки – вода или сок",
+  "Плато брускети с разнообразни вкусове",
+  "Плато сладки тарталети",
+  "Напитка (вода или сок)",
 ];
 
 function PricesPackages() {
@@ -38,19 +37,48 @@ function PricesPackages() {
   return (
     <div className="prices-page-bg">
       <div className="birthday-container">
-        {/* Hero */}
-        <section className="birthday-hero">
-          <h1 className="birthday-hero-title">
-            <span className="birthday-hero-emoji">🎂</span>
-            Рождени дни в 1001 усмивки
-          </h1>
-          <p className="birthday-hero-subtitle">
-            Направете рождения ден на вашето дете незабравим! Грижим се за
-            всичко – от украсата до забавленията, за да можете да се насладите
-            на специалния ден заедно с детето си.
-          </p>
-          <div className="birthday-hero-highlight">
-            ✨ Всичко включено за перфектния празник ✨
+        {/* Hero – text left, photos right */}
+        <section className="hero-section">
+          <div className="hero-left">
+            <h1 className="page-title">
+              Рождени дни в 1001 усмивки
+              <span className="birthday-hero-emoji">🎂</span>
+            </h1>
+            <div className="why-box">
+              <p>
+                Направете рождения ден на вашето дете незабравим! Грижим се за
+                всичко – от украсата до забавленията, за да можете да се
+                насладите на специалния ден заедно с детето си.
+              </p>
+            </div>
+            <div className="birthday-hero-highlight">
+              ✨ Всичко включено за перфектния празник ✨
+            </div>
+            <button
+              type="button"
+              className="birthday-packages-hero-cta"
+              onClick={scrollToContacts}
+            >
+              ЗАЯВИ КОНСУЛТАЦИЯ ›
+            </button>
+          </div>
+          <div className="hero-right">
+            <div className="birthday-packages-hero-images">
+              <div className="birthday-packages-hero-photo">
+                <img
+                  src="/images/parties/kidpaint1.jpg"
+                  alt="Деца творят и рисуват на празник в детски център"
+                  loading="lazy"
+                />
+              </div>
+              <div className="birthday-packages-hero-photo">
+                <img
+                  src="/images/parties/kidpaint2.jpg"
+                  alt="Творческа активност за деца на рожден ден"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -63,16 +91,16 @@ function PricesPackages() {
           <div className="birthday-pricing-cards">
             <div className="birthday-price-card">
               <span className="birthday-price-icon">👶</span>
-              <h3 className="birthday-price-title">Дете + Родител</h3>
+              <h3 className="birthday-price-title">Дете + Придружител</h3>
               <div className="birthday-price-amount">35 €</div>
               <p className="birthday-price-note">
-                Цената включва едно дете и един родител
+                Цената включва едно дете и един придружителя
               </p>
 
               <div className="birthday-includes-section">
                 <h4 className="birthday-includes-title">
                   <span>✨</span>
-                  Включено в цената
+                  Включено в пакета
                 </h4>
                 <ul className="birthday-includes-list">
                   {KID_PARENT_INCLUDES.map((item, i) => (
@@ -92,10 +120,10 @@ function PricesPackages() {
 
             <div className="birthday-price-card">
               <span className="birthday-price-icon">👨‍👩‍👧</span>
-              <h3 className="birthday-price-title">Втори родител</h3>
+              <h3 className="birthday-price-title">Втори придружител</h3>
               <div className="birthday-price-amount">10 €</div>
               <p className="birthday-price-note">
-                Допълнителна цена за втори родител
+                Допълнителна цена за втори придружител
               </p>
 
               <div className="birthday-includes-section">
@@ -138,7 +166,7 @@ function PricesPackages() {
             <div className="birthday-menu-card">
               <div className="birthday-menu-header">
                 <span className="birthday-menu-icon">🍽️</span>
-                <h3 className="birthday-menu-title">Меню за родители</h3>
+                <h3 className="birthday-menu-title">Меню за придружители</h3>
               </div>
               <ul className="birthday-menu-items">
                 {PARENTS_MENU_ITEMS.map((item, i) => (
@@ -158,22 +186,19 @@ function PricesPackages() {
 
           <div className="birthday-cake-content">
             <p>
-              Детският ни център работи в партньорство със сладкарница
-              „Романтика", която предлага разнообразие от вкусни и красиви торти
-              за всеки празник. При желание можем да ви предоставим каталог, от
-              който да изберете подходяща торта за вашето събитие.
+              Работим в партньорство със сладкарница „Романтика", която предлага
+              богато разнообразие от вкусни и красиви торти за всеки повод. При
+              желание можем да ви предоставим каталог, за да изберете най-
+              подходяща торта за вашето събитие.
             </p>
-            <p>
-              Разбира се, ако предпочитате, имате възможност да внесете и
-              собствена торта.
-            </p>
+            <p>Разбира се, имате възможност да внесете и собствена торта.</p>
 
             <div className="birthday-cake-highlight">
-              ⚠️ <strong>Важно:</strong> Молим да имате предвид, че съгласно
-              изискванията за безопасност на храните, тортата трябва да бъде
-              закупена от регистриран обект и да бъде придружена със сертификат
-              или документ, удостоверяващ произхода ѝ. Нашата цел е да осигурим
-              безопасна, приятна и незабравима атмосфера за вашия празник.
+              ⚠️ <strong>Важно:</strong> Съгласно изискванията за безопасност на
+              храните, тортата трябва да бъде закупена от регистриран обект и да
+              бъде придружена със сертификат или документ за произход. Нашата
+              цел е да осигурим безопасна, приятна и незабравима атмосфера за
+              вашия празник.✨
             </div>
           </div>
         </section>
