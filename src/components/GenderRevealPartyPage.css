@@ -145,6 +145,53 @@
   box-shadow: var(--shadow);
 }
 
+.gender-reveal-additional-pricing {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 20px 24px;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.gender-reveal-additional-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gender-reveal-additional-title,
+.gender-reveal-additional-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.gender-reveal-additional-link {
+  text-decoration: underline;
+}
+
+.gender-reveal-additional-link:hover {
+  color: var(--lilac);
+}
+
+.gender-reveal-additional-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.gender-reveal-additional-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
 .gender-reveal-pricing-card-header {
   display: flex;
   justify-content: space-between;
@@ -287,5 +334,13 @@
 
   .gender-reveal-pricing-card {
     padding: 20px 24px;
+  }
+
+  .gender-reveal-additional-pricing {
+    padding: 18px 20px;
+  }
+
+  .gender-reveal-additional-row {
+    flex-wrap: wrap;
   }
 }

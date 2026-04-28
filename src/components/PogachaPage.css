@@ -156,6 +156,53 @@
   gap: 1.5rem;
 }
 
+.pogacha-additional-pricing {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 20px 24px;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pogacha-additional-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pogacha-additional-title,
+.pogacha-additional-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pogacha-additional-link {
+  text-decoration: underline;
+}
+
+.pogacha-additional-link:hover {
+  color: var(--lilac);
+}
+
+.pogacha-additional-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.pogacha-additional-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
 .pogacha-pricing-card {
   background: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(14px);
@@ -319,5 +366,13 @@
 
   .pogacha-pricing-card {
     padding: 20px 24px;
+  }
+
+  .pogacha-additional-pricing {
+    padding: 18px 20px;
+  }
+
+  .pogacha-additional-row {
+    flex-wrap: wrap;
   }
 }

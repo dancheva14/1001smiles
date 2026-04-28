@@ -81,10 +81,6 @@ const GENDER_REVEAL_PACKAGE_FEATURES: PackageFeature[] = [
     title: "Наем зала – 2 часа",
   },
   {
-    title: "Тематична декорация",
-    subDetail: "Винил, балонена арка, масичка за торта",
-  },
-  {
     title: "Сладка обредна погача 1 кг.",
   },
   {
@@ -149,17 +145,31 @@ function GenderRevealPartyPage() {
               className="gender-reveal-image"
             />
           </div>
+          <div className="gender-reveal-additional-pricing">
+            <div className="gender-reveal-additional-row">
+              <a href="#themes" className="gender-reveal-additional-link">
+                Тематична украса за всеки повод
+              </a>
+              <span className="gender-reveal-additional-price">30 €</span>
+            </div>
+            <div className="gender-reveal-additional-row">
+              <span className="gender-reveal-additional-title">
+                Наем на зала (допълнително)
+              </span>
+              <span className="gender-reveal-additional-price">
+                70 €{" "}
+                <span className="gender-reveal-additional-subtitle">
+                  (за 1 час)
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
         <div className="gender-reveal-content-right">
           <PricingCard
             title="Пакет Парти за разкриване на пола"
             priceEur="340"
             features={GENDER_REVEAL_PACKAGE_FEATURES}
-          />
-          <PricingCard
-            title="Наем на зала (допълнително)"
-            priceEur="70"
-            headerSubtitle="(за 1 час)"
           />
           <button
             type="button"

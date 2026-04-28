@@ -79,10 +79,6 @@ const POGACHA_PACKAGE_FEATURES: PackageFeature[] = [
     title: "Наем зала – 3 часа",
   },
   {
-    title: "Тематична декорация",
-    subDetail: "Винил, балонена арка, масичка за торта",
-  },
-  {
     title: "🍞🍰🎂 Сладка обредна погача 1 кг.",
   },
   {
@@ -155,17 +151,29 @@ function PogachaPage() {
               />
             </div>
           </div>
+          <div className="pogacha-additional-pricing">
+            <div className="pogacha-additional-row">
+              <a href="#themes" className="pogacha-additional-link">
+                Тематична украса за всеки повод
+              </a>
+              <span className="pogacha-additional-price">30 €</span>
+            </div>
+            <div className="pogacha-additional-row">
+              <span className="pogacha-additional-title">
+                Наем на зала (допълнително)
+              </span>
+              <span className="pogacha-additional-price">
+                70 €{" "}
+                <span className="pogacha-additional-subtitle">(за 1 час)</span>
+              </span>
+            </div>
+          </div>
         </div>
         <div className="pogacha-content-right">
           <PricingCard
             title="Пакет Погача"
             priceEur="340 €"
             features={POGACHA_PACKAGE_FEATURES}
-          />
-          <PricingCard
-            title="Наем на зала (допълнително)"
-            priceEur="70"
-            headerSubtitle="(за 1 час)"
           />
           <button
             type="button"

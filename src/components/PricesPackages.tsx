@@ -3,7 +3,6 @@ import "./PricesPackages.css";
 const KID_PARENT_INCLUDES = [
   "Наем на зала – 2 часа и 30 минути",
   "Непрофесионален аниматор с интерактивна програма",
-  "Тематична украса по избор",
   "Пълно меню за детето",
   "Меню за придружителя",
 ];
@@ -138,6 +137,25 @@ function PricesPackages() {
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="birthday-decoration-section">
+          <div className="birthday-decoration-card">
+            <div className="birthday-decoration-icon">🎀</div>
+            <div className="birthday-decoration-content">
+              <h3 className="birthday-decoration-title">
+                <a href="#themes" className="birthday-decoration-link">
+                  Тематична украса за всеки повод (допълнително)
+                </a>
+              </h3>
+              <p className="birthday-decoration-description">
+                Вие избирате темата и стила на украсата, а ние се грижим за
+                всичко останало – от подбора на декорации до тяхното подреждане
+                и оформление.
+              </p>
+            </div>
+            <div className="birthday-decoration-price">30 €</div>
           </div>
         </section>
 
