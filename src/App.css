@@ -3,19 +3,31 @@
   margin-top: 90px;
 }
 
-/* Pull page background up into the gap; content stays below navbar via padding */
-.main-content > * {
+/*
+ * Only the first child needs the pull-up + padding (full-width background under the bar).
+ * Home renders several <section> siblings — if every child gets this, blocks overlap on mobile.
+ * Single-route pages (one root div/section) behave the same as before.
+ */
+main.main-content > *:first-child {
   margin-top: -90px;
   padding-top: 90px;
 }
 
-@media (max-width: 768px) {
+/* Navbar stacks (two rows) from ~925px — need more offset than single-row */
+@media (max-width: 925px) {
   .main-content {
-    margin-top: 140px;
+    margin-top: 175px;
   }
 
-  .main-content > * {
-    margin-top: -140px;
-    padding-top: 140px;
+  main.main-content > *:first-child {
+    margin-top: -175px;
+    padding-top: 175px;
+  }
+}
+
+@media (max-width: 768px) {
+  main.main-content > *:first-child {
+    margin-top: -220px;
+    padding-top: 200px;
   }
 }

@@ -1,12 +1,13 @@
 import "./ZalaPage.css";
-//import { publicUrl } from "../lib/publicUrl";
+import { publicUrl } from "../lib/publicUrl";
 
-/*const HALL_IMAGES = {
+const HALL_IMAGES = {
   hero: publicUrl("images/Hall/kidscenter1.jpg"),
+  opening: publicUrl("images/grandOpening.jpg"),
   galleryTall: publicUrl("images/Hall/kidscenter2.jpg"),
   gallery1: publicUrl("images/Hall/kidscnter.jpg"),
   gallery2: publicUrl("images/Hall/kidscenter1.jpg"),
-};*/
+};
 
 function ZalaPage() {
   const scrollToContacts = () => {
@@ -51,7 +52,7 @@ function ZalaPage() {
         </div>
         <div className="zala-hero-right">
           <div className="zala-hero-photo">
-            {/*  <img src={HALL_IMAGES.hero} alt="Детска зала 1001 усмивки" />*/}
+            <img src={HALL_IMAGES.opening} alt="Детска зала 1001 усмивки" />
             <div className="zala-hero-photo-badge">
               📍 гр. Перник, кв. Изток, ул. Карл Маркс 30 /сградата до моста/
             </div>
@@ -79,7 +80,7 @@ function ZalaPage() {
         </div>
       </section>
 
-      {/*<section className="zala-gallery-section">
+      <section className="zala-gallery-section">
         <div className="zala-section-label">
           <h2>
             Разгледайте <span>залата</span>
@@ -110,7 +111,7 @@ function ZalaPage() {
             <div className="zala-gal-caption">🏃 Активни игри и движение</div>
           </div>
         </div>
-      </section>*/}
+      </section>
 
       <section className="zala-details-section">
         <div className="zala-section-label" style={{ marginBottom: "28px" }}>

@@ -7,7 +7,10 @@
   --border: rgba(139, 107, 82, 0.13);
   --shadow: 0 4px 24px rgba(139, 107, 82, 0.1);
 
-  padding: 3rem 2rem 4rem;
+  /* Do not use `padding:` shorthand — it overrides .main-content > * padding-top and hides content under the fixed navbar */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
   min-height: calc(100vh - 80px);
   background-image:
     linear-gradient(
@@ -215,6 +218,17 @@
   color: #1877f2;
 }
 
+/* Extra top padding below fixed navbar (beats main.main-content > *:first-child) */
+main.main-content > .about-us-section:first-child {
+  padding-top: calc(90px + 3rem + env(safe-area-inset-top, 0px));
+}
+
+@media (max-width: 925px) {
+  main.main-content > .about-us-section:first-child {
+    padding-top: calc(175px + 2rem + env(safe-area-inset-top, 0px));
+  }
+}
+
 @media (max-width: 968px) {
   .about-us-container {
     grid-template-columns: 1fr;
@@ -230,8 +244,11 @@
 }
 
 @media (max-width: 768px) {
-  .about-us-section {
-    padding: 2rem 1rem 3rem;
+  main.main-content > .about-us-section:first-child {
+    padding-top: calc(200px + 1.5rem + env(safe-area-inset-top, 0px));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
   }
 
   .about-us-content {

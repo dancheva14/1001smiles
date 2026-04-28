@@ -26,11 +26,6 @@
   color: var(--text);
 }
 
-/* Keep content below fixed navbar */
-.main-content .prices-page-bg {
-  padding-top: 100px;
-}
-
 .birthday-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -462,6 +457,129 @@
   }
 }
 
+/* PricesPackages hero – text left, photos right */
+.prices-page-bg .hero-section {
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  animation: birthdayFadeInUp 0.8s ease-out;
+}
+
+.prices-page-bg .hero-left .page-title {
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 55%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.prices-page-bg .why-box {
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(139, 107, 82, 0.13);
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 28px rgba(139, 107, 82, 0.1);
+}
+
+.prices-page-bg .why-box p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0;
+  color: var(--text);
+}
+
+.prices-page-bg .hero-left .birthday-hero-highlight {
+  margin-top: 1.25rem;
+}
+
+.prices-page-bg .birthday-packages-hero-cta {
+  margin-top: 1.5rem;
+  padding: 1rem 1.75rem;
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--lilac) 100%);
+  box-shadow: 0 8px 28px rgba(192, 132, 252, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.prices-page-bg .birthday-packages-hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(255, 107, 157, 0.35);
+}
+
+.prices-page-bg .hero-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.prices-page-bg .birthday-packages-hero-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.prices-page-bg .birthday-packages-hero-photo {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(139, 107, 82, 0.14);
+}
+
+.prices-page-bg .birthday-packages-hero-photo img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .prices-page-bg .hero-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .prices-page-bg .birthday-packages-hero-images {
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .prices-page-bg .birthday-packages-hero-photo {
+    flex: 1 1 calc(50% - 0.35rem);
+    max-width: none;
+  }
+
+  .prices-page-bg .birthday-packages-hero-photo img {
+    height: 200px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .birthday-pricing-cards {
@@ -474,13 +592,6 @@
 }
 
 @media (max-width: 768px) {
-  .main-content .prices-page-bg {
-    padding-top: 140px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 3rem;
-  }
-
   .prices-page-bg {
     padding-left: 1rem;
     padding-right: 1rem;

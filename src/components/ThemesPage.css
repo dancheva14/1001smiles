@@ -25,11 +25,6 @@
   color: var(--text);
 }
 
-/* Override shared main-content padding so themes header stays below fixed navbar */
-.main-content .themes-page-bg {
-  padding-top: 100px;
-}
-
 .themes-container {
   max-width: 1600px;
   margin: 0 auto;
@@ -370,13 +365,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .main-content .themes-page-bg {
-    padding-top: 140px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 3rem;
-  }
-
   .themes-page-bg {
     padding-left: 1rem;
     padding-right: 1rem;
