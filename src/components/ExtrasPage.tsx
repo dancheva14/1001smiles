@@ -97,19 +97,45 @@ function ExtrasPage() {
         <div className="extension-section">
           <div className="extension-card">
             <div className="extension-icon">⏰</div>
-            <div className="extension-content">
-              <h3 className="extension-title">
-                Такса при удължаване на празника
-              </h3>
-              <p className="extension-description">
-                Нужно ви е повече време за незабравимото тържество? Удължете
-                празника с още час забавления! Ако залата не е резервирана
-                непосредствено след Вашето парти.
-              </p>
-              <div className="extension-details">
-                <span className="duration-badge">30 мин.</span>
-                <span className="duration-badge">60 мин.</span>
+            <div className="extension-main">
+              <div className="extension-content">
+                <h3 className="extension-title">
+                  Такса при удължаване на празника
+                </h3>
+                <p className="extension-description">
+                  Нужно ви е повече време за незабравимото тържество? Удължете
+                  празника с още час забавления! Ако залата не е резервирана
+                  непосредствено след Вашето парти.
+                </p>
+                <div className="extension-details">
+                  <span className="duration-badge">30 мин.</span>
+                  <span className="duration-badge">60 мин.</span>
+                </div>
+              </div>
+              <div className="extension-price">
                 <span className="price-tag">40 € / 70 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="extension-section">
+          <div className="extension-card">
+            <div className="extension-icon">🎀</div>
+            <div className="extension-main">
+              <div className="extension-content">
+                <h3 className="extension-title">
+                  <a href="#themes" className="extension-title-link">
+                    Тематична украса за всеки повод
+                  </a>
+                </h3>
+                <p className="extension-description">
+                  Вие избирате темата и стила на украсата, а ние се грижим за
+                  всичко останало – от подбора на декорации до тяхното
+                  подреждане и оформление.
+                </p>
+              </div>
+              <div className="extension-price">
+                <span className="price-tag">30 €</span>
               </div>
             </div>
           </div>
