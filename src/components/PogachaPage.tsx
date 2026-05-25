@@ -14,6 +14,7 @@ interface PricingCardProps {
   priceEur: string;
   features?: PackageFeature[];
   headerSubtitle?: string;
+  headerSubtitle2?: string;
 }
 
 function PricingCard({
@@ -21,6 +22,7 @@ function PricingCard({
   priceEur,
   features,
   headerSubtitle,
+  headerSubtitle2,
 }: PricingCardProps) {
   const [expanded, setExpanded] = useState(true);
 
@@ -46,7 +48,12 @@ function PricingCard({
       </div>
       <div className="pogacha-pricing-card-price">
         <span className="pogacha-price-eur">
-          {priceEur} {headerSubtitle}
+          {priceEur} {headerSubtitle}{" "}
+          {headerSubtitle2 && (
+            <span className="pogacha-price-eur-subtitle2">
+              {headerSubtitle2}
+            </span>
+          )}
         </span>
       </div>
       <div className="pogacha-pricing-card-divider" />
@@ -172,7 +179,8 @@ function PogachaPage() {
         <div className="pogacha-content-right">
           <PricingCard
             title="Пакет Погача"
-            priceEur="340 €"
+            priceEur="340 € "
+            headerSubtitle2="(цената на пакета включва до 10 човека)"
             features={POGACHA_PACKAGE_FEATURES}
           />
           <button

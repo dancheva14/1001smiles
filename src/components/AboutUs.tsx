@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 function AboutUs() {
   const address =
-    "гр. Перник, кв. Изток, ул. Карл Маркс 30 /сградата до моста/";
+    "гр. Перник, кв. Изток, ул. Рашо Димитров 62А";
   const encodedAddress = encodeURIComponent(`42°36'37.2"N 23°06'39.4"E`);
 
   return (
