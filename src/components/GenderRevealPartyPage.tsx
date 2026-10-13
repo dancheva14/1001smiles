@@ -150,7 +150,7 @@ function GenderRevealPartyPage() {
               <a href="#themes" className="gender-reveal-additional-link">
                 Тематична украса за всеки повод
               </a>
-              <span className="gender-reveal-additional-price">30 €</span>
+              <span className="gender-reveal-additional-price">40 €</span>
             </div>
             <div className="gender-reveal-additional-row">
               <span className="gender-reveal-additional-title">

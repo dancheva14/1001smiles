@@ -54,7 +54,7 @@ function ZalaPage() {
           <div className="zala-hero-photo">
             <img src={HALL_IMAGES.opening} alt="Детска зала 1001 усмивки" />
             <div className="zala-hero-photo-badge">
-              📍 гр. Перник, кв. Изток, ул. Рашо Димитров 62А
+              📍 гр. Перник, кв. Изток, ул. Карл Маркс 30
             </div>
           </div>
           <div className="zala-stats-row">

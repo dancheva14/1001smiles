@@ -120,7 +120,7 @@ function PricesPackages() {
             <div className="birthday-price-card">
               <span className="birthday-price-icon">👨‍👩‍👧</span>
               <h3 className="birthday-price-title">Втори придружител</h3>
-              <div className="birthday-price-amount">10 €</div>
+              <div className="birthday-price-amount">15 €</div>
               <p className="birthday-price-note">
                 Допълнителна цена за втори придружител
               </p>
@@ -155,7 +155,7 @@ function PricesPackages() {
                 и оформление.
               </p>
             </div>
-            <div className="birthday-decoration-price">30 €</div>
+            <div className="birthday-decoration-price">40 €</div>
           </div>
         </section>
 

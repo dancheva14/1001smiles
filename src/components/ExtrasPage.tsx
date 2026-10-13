@@ -135,7 +135,7 @@ function ExtrasPage() {
                 </p>
               </div>
               <div className="extension-price">
-                <span className="price-tag">30 €</span>
+                <span className="price-tag">40 €</span>
               </div>
             </div>
           </div>

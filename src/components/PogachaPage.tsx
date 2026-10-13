@@ -163,7 +163,7 @@ function PogachaPage() {
               <a href="#themes" className="pogacha-additional-link">
                 Тематична украса за всеки повод
               </a>
-              <span className="pogacha-additional-price">30 €</span>
+              <span className="pogacha-additional-price">80 €</span>
             </div>
             <div className="pogacha-additional-row">
               <span className="pogacha-additional-title">
